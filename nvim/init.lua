@@ -1,2 +1,2 @@
-print("Hello World")
 require('user/options')
+require('user/keymaps')
