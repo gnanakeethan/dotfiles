@@ -24,7 +24,7 @@ vim.opt.fillchars:append({eob = ' '})
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.opt.scrolloff = 14
+vim.opt.scrolloff = 16
 vim.opt.sidescrolloff = 8
 vim.opt.cmdheight=1
 vim.opt.clipboard = 'unnamedplus'
