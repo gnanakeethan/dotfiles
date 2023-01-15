@@ -2,29 +2,32 @@ local separator = { '"▏"', color = 'StatusLineNonText' }
 
 require('lualine').setup({
   options = {
-    section_separators = '',
-    component_separators = '',
-    globalstatus = true,
-    theme = {
-      normal = {
-        a = 'StatusLine',
-        b = 'StatusLine',
-        c = 'StatusLine',
-      },
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
     },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+    }
   },
   sections = {
     lualine_a = {
       'mode',
-      separator,
     },
     lualine_b = {
       'branch',
       'diff',
-      separator,
       '"🖧  " .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))',
       { 'diagnostics', sources = { 'nvim_diagnostic' } },
-      separator,
     },
     lualine_c = {
       'filename'
@@ -35,9 +38,7 @@ require('lualine').setup({
       'fileformat',
     },
     lualine_y = {
-      separator,
       '(vim.bo.expandtab and "␠ " or "⇥ ") .. " " .. vim.bo.shiftwidth',
-      separator,
     },
     lualine_z = {
       'location',

@@ -47,7 +47,7 @@ use('tpope/vim-eunuch') -- Adds :Rename, :SudoWrite
 use('tpope/vim-unimpaired') -- Adds [b and other handy mappings
 use('tpope/vim-sleuth') -- Indent autodetection with editorconfig support
 use('jessarcher/vim-heritage') -- Automatically create parent dirs when saving
-use('nelstrom/vim-visual-star-search')
+use('bronson/vim-visual-star-search')
 -- use { 'posva/vim-vue' }
 
 use({
@@ -294,12 +294,12 @@ use({
   end,
 })
 
-use({
-  'glepnir/dashboard-nvim',
-  config = function()
-    require('user.plugins.dashboard')
-  end,
-})
+-- use({
+--   'glepnir/dashboard-nvim',
+--   config = function()
+--     require('user.plugins.dashboard')
+--   end,
+-- })
 
 use({
   'danymat/neogen',
