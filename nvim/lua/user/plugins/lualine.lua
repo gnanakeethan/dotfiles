@@ -26,7 +26,6 @@ require('lualine').setup({
     lualine_b = {
       'branch',
       'diff',
-      '"🖧  " .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))',
       { 'diagnostics', sources = { 'nvim_diagnostic' } },
     },
     lualine_c = {
