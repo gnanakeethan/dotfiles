@@ -22,29 +22,10 @@ local asin = function(d) return deg(math.asin(d)) end
 local tan = function(d) return math.tan(rad(d)) end
 local atan = function(d) return deg(math.atan(d)) end
 
-local function fit_into_range(val, min, max)
-  local range = max - min
-  local count
-  if val < min then
-    count = floor((min - val) / range) + 1
-    return val + count * range
-  elseif val >= max then
-    count = floor((val - max) / range) + 1
-    return val - count * range
-  else
-    return val
-  end
-end
-
-local function day_of_year(date)
-  local n1 = floor(275 * date.month / 9)
-  local n2 = floor((date.month + 9) / 12)
-  local n3 = (1 + floor((date.year - 4 * floor(date.year / 4) + 2) / 3))
-  return n1 - (n2 * n3) + date.day - 30
-end
 
 local function sunturn_time(date, rising, latitude, longitude, zenith, local_offset)
-  local n = day_of_year(date)
+  --   local n = day_of_year(date)
+  local n = os.date("*t", os.time(date)).yday
 
   -- Convert the longitude to hour value and calculate an approximate time
   local lng_hour = longitude / 15
@@ -60,15 +41,13 @@ local function sunturn_time(date, rising, latitude, longitude, zenith, local_off
   local M = (0.9856 * t) - 3.289
 
   -- Calculate the Sun's true longitude
-  local L = fit_into_range(M + (1.916 * sin(M)) + (0.020 * sin(2 * M)) + 282.634, 0, 360)
+  local L = (M + (1.916 * sin(M)) + (0.020 * sin(2 * M)) + 282.634) % 360
 
   -- Calculate the Sun's right ascension
-  local RA = fit_into_range(atan(0.91764 * tan(L)), 0, 360)
+  local RA = (atan(0.91764 * tan(L))) % 360
 
   -- Right ascension value needs to be in the same quadrant as L
-  local Lquadrant  = floor(L / 90) * 90
-  local RAquadrant = floor(RA / 90) * 90
-  RA               = RA + Lquadrant - RAquadrant
+  RA = RA % 90 + (L - L % 90)
 
   -- Right ascension value needs to be converted into hours
   RA = RA / 15
@@ -99,13 +78,13 @@ local function sunturn_time(date, rising, latitude, longitude, zenith, local_off
   local T = H + RA - (0.06571 * t) - 6.622
 
   -- Adjust back to UTC
-  local UT = fit_into_range(T - lng_hour, 0, 24)
+  local UT = (T - lng_hour) % 24
 
   -- Convert UT value to local time zone of latitude/longitude
   local LT = UT + local_offset
 
   return os.time({ day = date.day, month = date.month, year = date.year,
-    hour = floor(LT), min = floor(frac(LT) * 60) })
+    hour = floor(LT), min = frac(LT) * 60 })
 end
 
 local function get(args)
@@ -158,3 +137,4 @@ end
 return {
   sunturn_time = sunturn_time
 }
+

@@ -88,7 +88,7 @@ cmp.setup({
   },
   sources = {
     -- Copilot Source
-    { name = "copilot" },
+    { name = "copilot", group_index = 2 },
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lua' },

@@ -135,16 +135,21 @@ use {
   cmd = "Copilot",
   after = { 'lualine.nvim' },
   config = function()
-    vim.schedule(function()
-      require("copilot").setup()
-    end)
+    vim.defer_fn(function()
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end, 100)
   end,
 }
 use {
   "zbirenbaum/copilot-cmp",
   after = { "copilot.lua" },
   config = function()
-    require("copilot_cmp").setup()
+    require("copilot_cmp").setup({
+      method = "getCompletionsCycling"
+    })
   end
 }
 
@@ -243,24 +248,6 @@ use({
     require('user.plugins.luasnip')
   end,
 })
-
-use({
-  'hrsh7th/nvim-cmp',
-  requires = {
-    'L3MON4D3/LuaSnip',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-cmdline',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-nvim-lsp-signature-help',
-    'hrsh7th/cmp-nvim-lua',
-    'jessarcher/cmp-path',
-    'onsails/lspkind-nvim',
-    'saadparwaiz1/cmp_luasnip',
-  },
-  config = function()
-    require('user.plugins.cmp')
-  end,
-})
 use({
   'phpactor/phpactor',
   branch = 'master',
@@ -344,6 +331,31 @@ use({ 'MunifTanjim/prettier.nvim',
   config = function()
     require('user.plugins.prettier')
   end
+})
+use({
+  'ray-x/go.nvim',
+  config = function()
+    require('go').setup()
+  end
+})
+use 'ray-x/guihua.lua' -- recommended if need floating window support
+
+use({
+  'hrsh7th/nvim-cmp',
+  requires = {
+    'L3MON4D3/LuaSnip',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    'hrsh7th/cmp-nvim-lua',
+    'jessarcher/cmp-path',
+    'onsails/lspkind-nvim',
+    'saadparwaiz1/cmp_luasnip',
+  },
+  config = function()
+    require('user.plugins.cmp')
+  end,
 })
 use({
   "EdenEast/nightfox.nvim",

@@ -2,9 +2,10 @@ local lustrous = require("lustrous")
 
 local function switch_colorscheme(sunrise_time, sunset_time)
   local current_time = os.time()
-  if current_time >= sunrise_time and current_time < sunset_time then
+  if current_time > sunrise_time and current_time < sunset_time then
     vim.api.nvim_command("colorscheme dayfox")
   else
+    print(sunrise_time)
     vim.api.nvim_command("colorscheme nightfox")
   end
 end
