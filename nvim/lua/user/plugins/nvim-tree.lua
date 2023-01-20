@@ -2,7 +2,7 @@
 -- vim.g.nvim_tree_git_hl = 1
 
 require('nvim-tree').setup({
-  open_on_setup = true,
+  open_on_setup = false,
   git = {
     ignore = true,
   },
