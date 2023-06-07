@@ -4,7 +4,7 @@ local ensure_packer = function()
   local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    vim.cmd [[packadd packer.nvim]]
+    vim.cmd([[packadd packer.nvim]])
     return true
   end
   return false
@@ -58,15 +58,16 @@ use({
   end,
 })
 
-use { "williamboman/mason.nvim",
+use({
+  'williamboman/mason.nvim',
   requires = {
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
   },
   config = function()
     require('user.plugins.mason')
   end,
-}
+})
 
 use({
   'tommcdo/vim-lion',
@@ -130,28 +131,28 @@ use({
     require('user.plugins.lualine')
   end,
 })
-use {
-  "zbirenbaum/copilot.lua",
-  cmd = "Copilot",
+use({
+  'zbirenbaum/copilot.lua',
+  cmd = 'Copilot',
   after = { 'lualine.nvim' },
   config = function()
     vim.defer_fn(function()
-      require("copilot").setup({
+      require('copilot').setup({
         suggestion = { enabled = false },
         panel = { enabled = false },
       })
     end, 100)
   end,
-}
-use {
-  "zbirenbaum/copilot-cmp",
-  after = { "copilot.lua" },
+})
+use({
+  'zbirenbaum/copilot-cmp',
+  after = { 'copilot.lua' },
   config = function()
-    require("copilot_cmp").setup({
-      method = "getCompletionsCycling"
+    require('copilot_cmp').setup({
+      method = 'getCompletionsCycling',
     })
-  end
-}
+  end,
+})
 
 use({
   'kyazdani42/nvim-tree.lua',
@@ -282,8 +283,6 @@ use({
   requires = 'nvim-treesitter/nvim-treesitter',
 })
 
-
-
 use({
   'sheerun/vim-polyglot',
 })
@@ -312,33 +311,44 @@ use({
     vim.g.cursorhold_updatetime = 100
   end,
 })
-use("neovim/nvim-lspconfig")
-use({ 'jose-elias-alvarez/null-ls.nvim',
+use('neovim/nvim-lspconfig')
+use({
+  'jose-elias-alvarez/null-ls.nvim',
   requires = {
     'nvim-lua/plenary.nvim',
-    "neovim/nvim-lspconfig",
+    'neovim/nvim-lspconfig',
   },
   config = function()
     require('user.plugins.null-ls')
-  end
-
+  end,
 })
-use({ 'MunifTanjim/prettier.nvim',
+use({
+  'jay-babu/mason-null-ls.nvim',
+  after = 'null-ls.nvim',
+  config = function()
+    require('mason-null-ls').setup({
+      automatic_setup = true,
+    })
+    require('mason-null-ls').setup_handlers()
+  end,
+})
+use({
+  'MunifTanjim/prettier.nvim',
   requires = {
     'neovim/nvim-lspconfig',
-    'jose-elias-alvarez/null-ls.nvim'
+    'jose-elias-alvarez/null-ls.nvim',
   },
   config = function()
     require('user.plugins.prettier')
-  end
+  end,
 })
 use({
   'ray-x/go.nvim',
   config = function()
     require('go').setup()
-  end
+  end,
 })
-use 'ray-x/guihua.lua' -- recommended if need floating window support
+use('ray-x/guihua.lua') -- recommended if need floating window support
 
 use({
   'hrsh7th/nvim-cmp',
@@ -358,12 +368,16 @@ use({
   end,
 })
 use({
-  "EdenEast/nightfox.nvim",
+  'iamcco/markdown-preview.nvim',
+  ft = 'markdown',
+  run = 'cd app && yarn install',
+})
+use({
+  'EdenEast/nightfox.nvim',
   config = function()
     require('user.themes.onehalf')
-  end
+  end,
 })
-
 
 -- Automatically install plugins on first run
 if packer_bootstrap then
