@@ -18,6 +18,9 @@ require('null-ls').setup({
     }),
     require('null-ls').builtins.diagnostics.proselint,
     require('null-ls').builtins.diagnostics.gitlint,
+    require('null-ls').builtins.diagnostics.cfn_lint.with({
+      filetypes = { 'yaml', 'json' },
+    }),
     require('null-ls').builtins.diagnostics.luacheck.with({
       extra_args = { '--config', vim.fn.stdpath('config') .. '/.luacheckrc' },
     }),
@@ -75,3 +78,4 @@ require('null-ls').setup({
     end
   end,
 })
+

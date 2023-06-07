@@ -49,6 +49,7 @@ use('tpope/vim-sleuth') -- Indent autodetection with editorconfig support
 use('jessarcher/vim-heritage') -- Automatically create parent dirs when saving
 use('nelstrom/vim-visual-star-search')
 -- use { 'posva/vim-vue' }
+use('b0o/schemastore.nvim')
 
 use({
   'tpope/vim-projectionist',
@@ -64,6 +65,7 @@ use({
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
   },
+
   config = function()
     require('user.plugins.mason')
   end,
@@ -317,6 +319,7 @@ use({
   requires = {
     'nvim-lua/plenary.nvim',
     'neovim/nvim-lspconfig',
+    'b0o/schemastore.nvim',
   },
   config = function()
     require('user.plugins.null-ls')
@@ -328,21 +331,6 @@ use({
   config = function()
     require('mason-null-ls').setup({
       automatic_setup = true,
-      ensure_installed = {
-        'dockerfile',
-        'go',
-        'graphql',
-        'html',
-        'javascript',
-        'json',
-        'lua',
-        'php',
-        'python',
-        'ruby',
-        'scss',
-        'typescript',
-        'yaml',
-      },
     })
   end,
 })
