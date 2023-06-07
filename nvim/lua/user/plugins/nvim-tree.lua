@@ -2,7 +2,6 @@
 -- vim.g.nvim_tree_git_hl = 1
 
 require('nvim-tree').setup({
-  open_on_setup = false,
   git = {
     ignore = true,
   },
@@ -41,3 +40,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end
 })
+local function open_nvim_tree()
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })

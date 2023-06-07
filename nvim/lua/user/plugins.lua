@@ -328,8 +328,22 @@ use({
   config = function()
     require('mason-null-ls').setup({
       automatic_setup = true,
+      ensure_installed = {
+        'dockerfile',
+        'go',
+        'graphql',
+        'html',
+        'javascript',
+        'json',
+        'lua',
+        'php',
+        'python',
+        'ruby',
+        'scss',
+        'typescript',
+        'yaml',
+      },
     })
-    require('mason-null-ls').setup_handlers()
   end,
 })
 use({
