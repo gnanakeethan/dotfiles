@@ -50,6 +50,8 @@ use('jessarcher/vim-heritage') -- Automatically create parent dirs when saving
 use('nelstrom/vim-visual-star-search')
 -- use { 'posva/vim-vue' }
 use('b0o/schemastore.nvim')
+-- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
 
 use({
   'tpope/vim-projectionist',
@@ -263,12 +265,6 @@ use({
 
 -- Experimental
 
-use({
-  'luukvbaal/stabilize.nvim',
-  config = function()
-    require('stabilize').setup()
-  end,
-})
 
 -- use({
 --   'glepnir/dashboard-nvim',
@@ -380,6 +376,9 @@ use({
     require('user.themes.onehalf')
   end,
 })
+
+use 'romgrk/barbar.nvim'
+
 
 -- Automatically install plugins on first run
 if packer_bootstrap then
