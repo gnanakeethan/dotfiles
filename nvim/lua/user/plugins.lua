@@ -331,16 +331,6 @@ use({
   end,
 })
 use({
-  'MunifTanjim/prettier.nvim',
-  requires = {
-    'neovim/nvim-lspconfig',
-    'jose-elias-alvarez/null-ls.nvim',
-  },
-  config = function()
-    require('user.plugins.prettier')
-  end,
-})
-use({
   'ray-x/go.nvim',
   config = function()
     require('go').setup()
