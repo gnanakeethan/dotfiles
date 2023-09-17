@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
-  <component name="Go" enabled="true" />
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
@@ -8,6 +7,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="SonarLintModuleSettings">
-    <option name="uniqueId" value="f156f91a-35d0-4466-86d7-ba3c1cff6bd9" />
+    <option name="uniqueId" value="fc184639-8451-4810-82ad-ef62fb6fd54d" />
   </component>
 </module>
