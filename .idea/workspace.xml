@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="addd95b0-007d-4cc3-b904-223a770c187d" name="Changes" comment="" />
+    <list default="true" id="addd95b0-007d-4cc3-b904-223a770c187d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nvim/lazy-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lazy-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nvim/lua/config/keymaps.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lua/config/keymaps.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nvim/lua/config/lazy.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lua/config/lazy.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nvim/lua/config/options.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lua/config/options.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nvim/lua/plugins/custom/null-ls.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lua/plugins/custom/null-ls.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nvim/lua/plugins/plugins.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lua/plugins/plugins.lua" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,36 +59,36 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2VEB0uDMJ4KNigAKaay5M2TXB7w" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "0d12a988",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "terminal",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,6 +98,11 @@
       <option name="presentableId" value="Default" />
       <updated>1694391145116</updated>
       <workItem from="1694391146120" duration="3125000" />
+      <workItem from="1694949017903" duration="1691000" />
+      <workItem from="1695346674556" duration="3132000" />
+      <workItem from="1695430114122" duration="507000" />
+      <workItem from="1695431842441" duration="2731000" />
+      <workItem from="1695521609739" duration="46000" />
     </task>
     <servers />
   </component>

@@ -1,37 +1,54 @@
 return {
-    { "christoomey/vim-tmux-navigator" },
-    { "farmergreg/vim-lastplace" },
-    { "tpope/vim-commentary" },
-    { "tpope/vim-repeat" },
-    { "tpope/vim-surround" },
-    { "tpope/vim-eunuch" },      -- Adds :Rename, :SudoWrite,
-    { "tpope/vim-unimpaired" },  -- Adds [b and other handy mappings,
-    { "tpope/vim-sleuth" },      -- Indent autodetection with editorconfig support,
-    { "jessarcher/vim-heritage" }, -- Automatically create parent dirs when saving,
-    { "nelstrom/vim-visual-star-search" },
-    { "b0o/schemastore.nvim" },
-    { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
-    { "goolord/alpha-nvim",             enabled = false },
-    {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        config = function()
-            require("plugins.custom.nvim-tree")
-        end,
+  { "christoomey/vim-tmux-navigator" },
+  { "farmergreg/vim-lastplace" },
+  { "tpope/vim-commentary" },
+  { "tpope/vim-repeat" },
+  { "tpope/vim-surround" },
+  { "tpope/vim-eunuch" }, -- Adds :Rename, :SudoWrite,
+  { "tpope/vim-unimpaired" }, -- Adds [b and other handy mappings,
+  { "tpope/vim-sleuth" }, -- Indent autodetection with editorconfig support,
+  { "jessarcher/vim-heritage" }, -- Automatically create parent dirs when saving,
+  { "nelstrom/vim-visual-star-search" },
+  { "b0o/schemastore.nvim" },
+  { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
+  { "goolord/alpha-nvim", enabled = false },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
     },
-    -- formatters
-    {
-        "jose-elias-alvarez/null-ls.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        dependencies = { "mason.nvim" },
-        config = function()
-            require("plugins.custom.null-ls")
+    config = function()
+      require("plugins.custom.nvim-tree")
+    end,
+  },
+  -- formatters
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "mason.nvim" },
+    config = function()
+      require("plugins.custom.null-ls")
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap",
+    optional = true,
+    dependencies = {
+      {
+        "mason.nvim",
+        opts = function(_, opts)
+          opts.ensure_installed = opts.ensure_installed or {}
+          vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl", "gofumpt", "goimports-reviser", "delve" })
         end,
+      },
+      {
+        "leoluz/nvim-dap-go",
+        config = true,
+      },
     },
+  },
 }
 --use({
 --    'tommcdo/vim-lion',
@@ -338,17 +355,3 @@ return {
 --})
 --
 --use 'romgrk/barbar.nvim'
---
---
----- Automatically install plugins on first run
---if packer_bootstrap then
---    require('packer').sync()
---end
---
----- Automatically regenerate compiled loader file on save
---vim.cmd([[
---  augroup packer_user_config
---    autocmd!
---    autocmd BufWritePost plugins.lua source <afile>
---  augroup end
---]])
