@@ -13,6 +13,16 @@ return {
   { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
   { "goolord/alpha-nvim", enabled = false },
   {
+    "telescope.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      config = function()
+        require("telescope").load_extension("fzf")
+      end,
+    },
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
@@ -25,7 +35,7 @@ return {
   },
   -- formatters
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = { "mason.nvim" },
     config = function()
