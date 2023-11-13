@@ -9,7 +9,7 @@ return {
   { "tpope/vim-sleuth" }, -- Indent autodetection with editorconfig support,
   { "jessarcher/vim-heritage" }, -- Automatically create parent dirs when saving,
   { "nelstrom/vim-visual-star-search" },
-  { "b0o/schemastore.nvim" },
+  --{ "b0o/schemastore.nvim" },
   { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
   { "goolord/alpha-nvim", enabled = false },
   {
