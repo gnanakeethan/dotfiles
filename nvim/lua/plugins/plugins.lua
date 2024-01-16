@@ -131,11 +131,10 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-path",
+      "jessarcher/cmp-path",
       "onsails/lspkind-nvim",
       "saadparwaiz1/cmp_luasnip",
     },
-    ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       table.insert(opts.sources, 1, {
         name = "copilot",
