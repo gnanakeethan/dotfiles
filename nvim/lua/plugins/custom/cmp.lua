@@ -8,6 +8,13 @@ local lspkind = require("lspkind")
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,longest,preview"
+lspkind.init({
+  symbol_map = {
+    Copilot = "",
+  },
+})
+
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 cmp.setup({
   experimental = {
@@ -21,6 +28,7 @@ cmp.setup({
         nvim_lsp = "[LSP]",
         luasnip = "[LuaSnip]",
         nvim_lua = "[Lua]",
+        Copilot = "[Copilot]",
       },
     }),
   },
@@ -89,6 +97,7 @@ cmp.setup({
   },
   sources = {
     -- Copilot Source
+    { name = "cmp_ai", group_index = 2 },
     { name = "copilot", group_index = 2 },
     -- Other sources
     { name = "nvim_lsp", group_index = 2 },

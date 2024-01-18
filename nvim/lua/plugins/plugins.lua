@@ -10,7 +10,6 @@ return {
   { "jessarcher/vim-heritage" }, -- Automatically create parent dirs when saving,
   { "nelstrom/vim-visual-star-search" },
   { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
-  { "goolord/alpha-nvim", enabled = false },
   {
     "telescope.nvim",
     dependencies = {
@@ -44,29 +43,29 @@ return {
   {
     "sbdchd/neoformat",
   },
-  {
-    "mfussenegger/nvim-dap",
-    optional = true,
-    dependencies = {
-      {
-        "mason.nvim",
-        opts = function(_, opts)
-          --opts.ensure_installed = opts.ensure_installed or {}
-          --vim.list_extend(opts.ensure_installed, {
-          --  "gomodifytags",
-          --  "impl",
-          --  "gofumpt",
-          --  "goimports-reviser",
-          --  "delve"
-          --})
-        end,
-      },
-      {
-        "leoluz/nvim-dap-go",
-        config = true,
-      },
-    },
-  },
+  --{
+  --  "mfussenegger/nvim-dap",
+  --  optional = true,
+  --  dependencies = {
+  --    {
+  --      "mason.nvim",
+  --      opts = function(_, opts)
+  --        --opts.ensure_installed = opts.ensure_installed or {}
+  --        --vim.list_extend(opts.ensure_installed, {
+  --        --  "gomodifytags",
+  --        --  "impl",
+  --        --  "gofumpt",
+  --        --  "goimports-reviser",
+  --        --  "delve"
+  --        --})
+  --      end,
+  --    },
+  --    {
+  --      "leoluz/nvim-dap-go",
+  --      config = true,
+  --    },
+  --  },
+  --},
   {
     "lukas-reineke/headlines.nvim",
     enabled = false,
@@ -94,19 +93,6 @@ return {
     end,
   },
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    build = ":Copilot auth",
-    opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-      filetypes = {
-        markdown = true,
-        help = true,
-      },
-    },
-  },
-  {
     "nvim-cmp",
     dependencies = {
       {
@@ -125,31 +111,85 @@ return {
           end)
         end,
       },
+      {
+        "gnanakeethan/cmp-ai",
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+        },
+        config = function()
+          local cmp_ai = require("cmp_ai.config")
+          cmp_ai:setup({
+            max_lines = 100,
+            provider = "Ollama",
+            provider_options = {
+              model = "codellama:34b-code",
+            },
+            notify = true,
+            notify_callback = function(msg)
+              require("notify").notify(msg, vim.log.levels.INFO, {
+                title = "Ollama",
+                render = "compact",
+              })
+            end,
+            run_on_every_keystroke = true,
+            ignored_file_types = {
+              -- default is not to ignore
+              -- uncomment to ignore in lua:
+              -- lua = true
+            },
+          })
+        end,
+      },
       "L3MON4D3/LuaSnip",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "hrsh7th/cmp-nvim-lua",
-      "jessarcher/cmp-path",
+      "hrsh7th/cmp-path",
       "onsails/lspkind-nvim",
       "saadparwaiz1/cmp_luasnip",
     },
-    opts = function(_, opts)
-      table.insert(opts.sources, 1, {
-        name = "copilot",
-        group_index = 1,
-        priority = 100,
-      })
-    end,
+    opts = function(_, opts) end,
     config = function()
       require("plugins.custom.cmp")
     end,
   },
   {
-    "laytan/tailwind-sorter.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim" },
+    "laytan/tailwind-sorter.nvim",
     build = "cd formatter && npm i && npm run build",
     config = true,
   },
+  -- {
+  --   "gnanakeethan/llm.nvim",
+  --   opts = {
+  --     tokens_to_clear = { "<EOT>" },
+  --     fim = {
+  --       enabled = true,
+  --       prefix = "<PRE> ",
+  --       middle = " <MID>",
+  --       suffix = " <SUF>",
+  --     },
+  --     lsp = {
+  --       bin_path = "/Users/gnanakeethan/.cargo/bin/llm-ls",
+  --     },
+  --     model = "http://localhost:11434/api/generate",
+  --     context_window = 4096,
+  --     tokenizer = {
+  --       repository = "codellama/CodeLlama-34b-hf",
+  --     },
+  --     request_params = {},
+  --     query_params = {
+  --       maxNewTokens = 120,
+  --       temperature = 0.3,
+  --       topP = 0.95,
+  --       stopTokens = nil,
+  --       doSample = true,
+  --     },
+  --     adaptor = "ollama",
+  --     api_token = "Test",
+  --     request_body = { model = "codellama:34b-code" },
+  --   },
+  -- },
 }
