@@ -32,19 +32,8 @@ require("null-ls").setup({
         return utils.root_has_file({ ".eslintrc.js" })
       end,
     }),
-    null_ls.builtins.formatting.prettier.with({
-      filetypes = {
-        "javascript",
-        "typescript",
-        "css",
-        "scss",
-        "html",
-        "json",
-        "yaml",
-        "markdown",
-        "graphql",
-        "md",
-        "txt",
+    null_ls.builtins.formatting.prettierd.with({
+      extra_filetypes = {
         "svelte",
       },
     }),

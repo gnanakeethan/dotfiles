@@ -73,6 +73,18 @@ local servers = {
     },
   }
 }
+local on_new_config = {
+  clangd = {},
+  gopls = {},
+  rust_analyzer = {},
+  tsserver = {},
+  prettierd= {},
+  yamlls = function(new_config)
+    new_config.settings.yaml.schemas = new_config.settings.yaml.schemas or {}
+    vim.list_extend(new_config.settings.yaml.schemas, require("schemastore").yaml.schemas())
+  end
+}
+
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require('mason-lspconfig')
