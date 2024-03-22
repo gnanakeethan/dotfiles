@@ -3,9 +3,9 @@ local config = {}
 local act = wezterm.action
 
 config.font = wezterm.font("VictorMono Nerd Font Propo")
-config.font_size = 15.0
+config.font_size = 12.5
 config.use_dead_keys = false
-config.line_height = 1.4
+config.line_height = 1.5
 config.window_padding = {
 	left = 0,
 	right = 0,
@@ -13,23 +13,17 @@ config.window_padding = {
 	bottom = 0,
 }
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+-- config.tab_bar_at_bottom = true
+config.tab_max_width = 16
+config.text_blink_rate = 500
+config.cursor_blink_rate = 800
+config.cursor_blink_ease_in = "Linear"
 config.keys = {
 	{ key = "p", mods = "CMD", action = wezterm.action.SendKey({ key = "p", mods = "CTRL" }) },
+	-- { key = "w", mods = "CMD", action = wezterm.action.SendKey({ key = "w", mods = "CTRL" }) },
 	{ key = "n", mods = "CMD", action = wezterm.action.SendKey({ key = "n", mods = "CTRL" }) },
-	{
-		key = "LeftArrow",
-		mods = "OPT",
-		action = act.SendKey({
-			key = "b",
-			mods = "ALT",
-		}),
-	},
-	{
-		key = "RightArrow",
-		mods = "OPT",
-
-		action = act.SendKey({ key = "f", mods = "ALT" }),
-	},
+	{ key = "LeftArrow", mods = "OPT", action = act.SendKey({ key = "b", mods = "ALT" }) },
+	{ key = "RightArrow", mods = "OPT", action = act.SendKey({ key = "f", mods = "ALT" }) },
 }
 local io = require("io")
 local latitude = 6.99

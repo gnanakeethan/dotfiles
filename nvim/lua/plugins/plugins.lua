@@ -9,7 +9,7 @@ return {
   { "tpope/vim-sleuth" }, -- Indent autodetection with editorconfig support,
   { "jessarcher/vim-heritage" }, -- Automatically create parent dirs when saving,
   { "nelstrom/vim-visual-star-search" },
-  { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
+  -- { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
   {
     "telescope.nvim",
     dependencies = {
@@ -20,17 +20,17 @@ return {
       end,
     },
   },
-  {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    lazy = false,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("plugins.custom.nvim-tree")
-    end,
-  },
+  -- {
+  --   "nvim-tree/nvim-tree.lua",
+  --   version = "*",
+  --   lazy = false,
+  --   dependencies = {
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   config = function()
+  --     require("plugins.custom.nvim-tree")
+  --   end,
+  -- },
   -- formatters
   {
     "nvimtools/none-ls.nvim",
@@ -69,6 +69,7 @@ return {
   --    },
   --  },
   --},
+  { "nvim-neotest/nvim-nio" },
   {
     "leoluz/nvim-dap-go",
     dependencies = {
@@ -464,6 +465,14 @@ return {
       end
       require("nvim-treesitter.configs").setup(opts)
     end,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      window = {
+        position = "float",
+      },
+    },
   },
   {
     "laytan/tailwind-sorter.nvim",
