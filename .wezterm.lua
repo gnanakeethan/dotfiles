@@ -3,9 +3,9 @@ local config = {}
 local act = wezterm.action
 
 config.font = wezterm.font("VictorMono Nerd Font Propo")
-config.font_size = 12.5
+config.font_size = 14
 config.use_dead_keys = false
-config.line_height = 1.5
+config.line_height = 1.25
 config.window_padding = {
 	left = 0,
 	right = 0,
@@ -14,10 +14,10 @@ config.window_padding = {
 }
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 -- config.tab_bar_at_bottom = true
-config.tab_max_width = 16
-config.text_blink_rate = 500
-config.cursor_blink_rate = 800
-config.cursor_blink_ease_in = "Linear"
+-- config.tab_max_width = 16
+-- config.text_blink_rate = 500
+-- config.cursor_blink_rate = 800
+-- config.cursor_blink_ease_in = "Linear"
 config.keys = {
 	{ key = "p", mods = "CMD", action = wezterm.action.SendKey({ key = "p", mods = "CTRL" }) },
 	-- { key = "w", mods = "CMD", action = wezterm.action.SendKey({ key = "w", mods = "CTRL" }) },

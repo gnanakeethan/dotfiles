@@ -32,17 +32,17 @@ return {
   --   end,
   -- },
   -- formatters
-  {
-    "nvimtools/none-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "mason.nvim",
-      "nvimtools/none-ls-extras.nvim",
-    },
-    config = function()
-      require("plugins.custom.null-ls")
-    end,
-  },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   dependencies = {
+  --     "mason.nvim",
+  --     "nvimtools/none-ls-extras.nvim",
+  --   },
+  --   config = function()
+  --     require("plugins.custom.null-ls")
+  --   end,
+  -- },
   {
     "sbdchd/neoformat",
   },
@@ -405,12 +405,15 @@ return {
     opts = {
       highlight = { enable = true },
       indent = { enable = true },
+      auto_install = true,
+      sync_install = true,
       ensure_installed = {
         "bash",
         "c",
         "diff",
         "html",
         "javascript",
+        "dockerfile",
         "jsdoc",
         "json",
         "jsonc",
