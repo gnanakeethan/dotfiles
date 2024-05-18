@@ -28,9 +28,9 @@ local io = require("io")
 local latitude = 6.99
 local longitude = 79.99
 local success, sunrise, stderr =
-	wezterm.run_child_process({ "/Users/gnanakeethan/go/bin/timer", latitude, longitude, "sunrise" })
+	wezterm.run_child_process({ wezterm.home_dir .. "/go/bin/timer", latitude, longitude, "sunrise" })
 local success, sunset, stderr =
-	wezterm.run_child_process({ "/Users/gnanakeethan/go/bin/timer", latitude, longitude, "sunset" })
+	wezterm.run_child_process({ wezterm.home_dir .. "/go/bin/timer", latitude, longitude, "sunset" })
 local now = os.time()
 if now > tonumber(sunrise) and now < tonumber(sunset) then
 	config.color_scheme = "dayfox"
