@@ -2,8 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 -- This file is automatically loaded by plugins.core
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
 
 local opt = vim.opt
 
@@ -13,6 +13,7 @@ opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 3 -- Hide * markup for bold and italic
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
+opt.guicursor = "n-v-i:blinkwait200-blinkon400-blinkoff400"
 opt.expandtab = true -- Use spaces instead of tabs
 opt.formatoptions = "jcroqlnt" -- tcqj
 opt.grepformat = "%f:%l:%c:%m"
@@ -50,13 +51,12 @@ opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
 
 if vim.fn.has("nvim-0.9.0") == 1 then
-    opt.splitkeep = "screen"
-    opt.shortmess:append({ C = true })
+  opt.splitkeep = "screen"
+  opt.shortmess:append({ C = true })
 end
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
-
 
 opt.shiftwidth = 4
 opt.tabstop = 4
@@ -74,22 +74,22 @@ opt.wrap = false
 opt.cmdheight = 1
 opt.breakindent = true -- maintain indent when wrapping indented lines
 opt.list = true -- enable the below listchars
-opt.listchars = { tab = '▸ ', trail = '·' }
-opt.fillchars:append({ eob = ' ' }) -- remove the ~ from end of buffer
-opt.mouse = 'a' -- enable mouse for all modes
+opt.listchars = { tab = "▸ ", trail = "·" }
+opt.fillchars:append({ eob = " " }) -- remove the ~ from end of buffer
+opt.mouse = "a" -- enable mouse for all modes
 opt.splitbelow = true
 opt.splitright = true
 opt.scrolloff = 999
 opt.sidescrolloff = 999
-opt.fileformat = 'unix'
-opt.clipboard = 'unnamedplus' -- Use Linux system clipboard
+opt.fileformat = "unix"
+opt.clipboard = "unnamedplus" -- Use Linux system clipboard
 opt.confirm = true -- ask for confirmation instead of erroring
 opt.undofile = true -- persistent undo
 opt.backup = true -- automatically save a backup file
-opt.backupdir:remove('.') -- keep backups out of the current directory
+opt.backupdir:remove(".") -- keep backups out of the current directory
 opt.shortmess:append({ I = true }) -- disable the splash screen
-opt.wildmode = 'longest:full,full' -- complete the longest common match, and allow tabbing the results to fully complete them
-opt.signcolumn = 'yes:2'
+opt.wildmode = "longest:full,full" -- complete the longest common match, and allow tabbing the results to fully complete them
+opt.signcolumn = "yes:2"
 opt.showmode = false
 opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent polyglot from changing it
 opt.redrawtime = 10000 -- Allow more time for loading syntax on large files

@@ -46,6 +46,113 @@ return {
   {
     "sbdchd/neoformat",
   },
+
+  {
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
+    opts = function()
+      local logo = [[
+
+ ██████╗██╗      ██████╗ ██╗   ██╗██████╗     ██████╗  █████╗ ██████╗  █████╗ ██╗     ██╗      █████╗ ██╗  ██╗    ██████╗ ██╗   ██╗████████╗    ██╗  ████████╗██████╗ 
+██╔════╝██║     ██╔═══██╗██║   ██║██╔══██╗    ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║     ██║     ██╔══██╗╚██╗██╔╝    ██╔══██╗██║   ██║╚══██╔══╝    ██║  ╚══██╔══╝██╔══██╗
+██║     ██║     ██║   ██║██║   ██║██║  ██║    ██████╔╝███████║██████╔╝███████║██║     ██║     ███████║ ╚███╔╝     ██████╔╝██║   ██║   ██║       ██║     ██║   ██║  ██║
+██║     ██║     ██║   ██║██║   ██║██║  ██║    ██╔═══╝ ██╔══██║██╔══██╗██╔══██║██║     ██║     ██╔══██║ ██╔██╗     ██╔═══╝ ╚██╗ ██╔╝   ██║       ██║     ██║   ██║  ██║
+╚██████╗███████╗╚██████╔╝╚██████╔╝██████╔╝    ██║     ██║  ██║██║  ██║██║  ██║███████╗███████╗██║  ██║██╔╝ ██╗    ██║      ╚████╔╝    ██║       ███████╗██║   ██████╔╝
+ ╚═════╝╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝     ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝       ╚═══╝     ╚═╝       ╚══════╝╚═╝   ╚═════╝
+        No 33, Level 12, Park Street, Colombo 03, Sri Lanka
+                                                                                                                                                                      
+      ]]
+      local opts = {
+        theme = "doom",
+        hide = {
+          -- this is taken care of by lualine
+          -- enabling this messes up the actual laststatus setting after loading a file
+          statusline = false,
+        },
+        config = {
+          header = vim.split(logo, "\n"),
+          center = {
+            {
+              action = LazyVim.telescope("files"),
+              desc = " Find File",
+              icon = " ",
+              key = "f",
+            },
+            {
+              action = "ene | startinsert",
+              desc = " New File",
+              icon = " ",
+              key = "n",
+            },
+            {
+              action = "Telescope oldfiles",
+              desc = " Recent Files",
+              icon = " ",
+              key = "r",
+            },
+            {
+              action = "Telescope live_grep",
+              desc = " Find Text",
+              icon = " ",
+              key = "g",
+            },
+            {
+              action = [[lua LazyVim.telescope.config_files()()]],
+              desc = " Config",
+              icon = " ",
+              key = "c",
+            },
+            {
+              action = 'lua require("persistence").load()',
+              desc = " Restore Session",
+              icon = " ",
+              key = "s",
+            },
+            {
+              action = "LazyExtras",
+              desc = " Lazy Extras",
+              icon = " ",
+              key = "x",
+            },
+            {
+              action = "Lazy",
+              desc = " Lazy",
+              icon = "󰒲 ",
+              key = "l",
+            },
+            {
+              action = "qa",
+              desc = " Quit",
+              icon = " ",
+              key = "q",
+            },
+          },
+          footer = function()
+            local stats = require("lazy").stats()
+            local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+            return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
+          end,
+        },
+      }
+      for _, button in ipairs(opts.config.center) do
+        button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
+        button.key_format = "  %s"
+      end
+
+      -- close Lazy and re-open when the dashboard is ready
+      if vim.o.filetype == "lazy" then
+        vim.cmd.close()
+        vim.api.nvim_create_autocmd("User", {
+          pattern = "DashboardLoaded",
+          callback = function()
+            require("lazy").show()
+          end,
+        })
+      end
+      return opts
+    end,
+  },
   --{
   --  "mfussenegger/nvim-dap",
   --  optional = true,
@@ -314,32 +421,32 @@ return {
           end)
         end,
       },
-       --{
-       --  "gnanakeethan/cmp-ai",
-       --  dependencies = {
-       --    "nvim-lua/plenary.nvim",
-       --  },
-       --  config = function()
-       --    local cmp_ai = require("cmp_ai.config")
-       --    cmp_ai:setup({
-       --      max_lines = 100,
-       --      provider = "Ollama",
-       --      provider_options = {
-       --        model = "codegemma",
-       --      },
-       --      notify = true,
-       --      notify_callback = function(msg)
-       --        vim.notify(msg)
-       --      end,
-       --      run_on_every_keystroke = true,
-       --      ignored_file_types = {
-       --        -- default is not to ignore
-       --        -- uncomment to ignore in lua:
-       --        -- lua = true
-       --      },
-       --    })
-       --  end,
-       --},
+      --{
+      --  "gnanakeethan/cmp-ai",
+      --  dependencies = {
+      --    "nvim-lua/plenary.nvim",
+      --  },
+      --  config = function()
+      --    local cmp_ai = require("cmp_ai.config")
+      --    cmp_ai:setup({
+      --      max_lines = 100,
+      --      provider = "Ollama",
+      --      provider_options = {
+      --        model = "codegemma",
+      --      },
+      --      notify = true,
+      --      notify_callback = function(msg)
+      --        vim.notify(msg)
+      --      end,
+      --      run_on_every_keystroke = true,
+      --      ignored_file_types = {
+      --        -- default is not to ignore
+      --        -- uncomment to ignore in lua:
+      --        -- lua = true
+      --      },
+      --    })
+      --  end,
+      --},
       "L3MON4D3/LuaSnip",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-cmdline",

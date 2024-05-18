@@ -15,9 +15,8 @@ config.window_padding = {
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 -- config.tab_bar_at_bottom = true
 -- config.tab_max_width = 16
--- config.text_blink_rate = 500
--- config.cursor_blink_rate = 800
--- config.cursor_blink_ease_in = "Linear"
+config.text_blink_rate = 500
+config.cursor_blink_rate = 500
 config.keys = {
 	{ key = "p", mods = "CMD", action = wezterm.action.SendKey({ key = "p", mods = "CTRL" }) },
 	-- { key = "w", mods = "CMD", action = wezterm.action.SendKey({ key = "w", mods = "CTRL" }) },
