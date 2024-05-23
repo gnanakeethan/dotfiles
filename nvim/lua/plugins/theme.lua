@@ -1,7 +1,6 @@
 return {
   {
     "EdenEast/nightfox.nvim",
-    event = { "LazyFile", "VeryLazy" },
     config = function()
       local latitude = 6.99
       local longitude = 79.99
