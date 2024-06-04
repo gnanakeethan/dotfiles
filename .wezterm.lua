@@ -3,9 +3,9 @@ local config = {}
 local act = wezterm.action
 
 config.font = wezterm.font("VictorMono Nerd Font Propo")
-config.font_size = 14
+config.font_size = 13
 config.use_dead_keys = false
-config.line_height = 1.25
+config.line_height = 2
 config.window_padding = {
 	left = 0,
 	right = 0,
