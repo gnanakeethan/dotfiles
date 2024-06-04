@@ -1,12 +1,4 @@
 return {
-  { "christoomey/vim-tmux-navigator" },
-  { "farmergreg/vim-lastplace" },
-  { "tpope/vim-repeat" },
-  { "tpope/vim-surround" },
-  { "tpope/vim-eunuch" }, -- Adds :Rename, :SudoWrite,
-  { "tpope/vim-unimpaired" }, -- Adds [b and other handy mappings,
-  { "tpope/vim-sleuth" }, -- Indent autodetection with editorconfig support,
-  { "jessarcher/vim-heritage" }, -- Automatically create parent dirs when saving,
   { "nelstrom/vim-visual-star-search" },
   -- { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
   {
@@ -47,31 +39,9 @@ return {
       },
     },
   },
-  -- {
-  --   "nvim-tree/nvim-tree.lua",
-  --   version = "*",
-  --   lazy = false,
-  --   dependencies = {
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  --   config = function()
-  --     require("plugins.custom.nvim-tree")
-  --   end,
-  -- },
-  -- formatters
-  -- {
-  --   "nvimtools/none-ls.nvim",
-  --   event = { "BufReadPre", "BufNewFile" },
-  --   dependencies = {
-  --     "mason.nvim",
-  --     "nvimtools/none-ls-extras.nvim",
-  --   },
-  --   config = function()
-  --     require("plugins.custom.null-ls")
-  --   end,
-  -- },
   {
     "sbdchd/neoformat",
+    event = "LazyFile",
   },
   {
     "nvimdev/dashboard-nvim",
@@ -186,30 +156,6 @@ return {
       return opts
     end,
   },
-  --{
-  --  "mfussenegger/nvim-dap",
-  --  optional = true,
-  --  dependencies = {
-  --    {
-  --      "mason.nvim",
-  --      opts = function(_, opts)
-  --        --opts.ensure_installed = opts.ensure_installed or {}
-  --        --vim.list_extend(opts.ensure_installed, {
-  --        --  "gomodifytags",
-  --        --  "impl",
-  --        --  "gofumpt",
-  --        --  "goimports-reviser",
-  --        --  "delve"
-  --        --})
-  --      end,
-  --    },
-  --    {
-  --      "leoluz/nvim-dap-go",
-  --      config = true,
-  --    },
-  --  },
-  --},
-  { "nvim-neotest/nvim-nio" },
   {
     "glacambre/firenvim",
     -- Lazy load firenvim
@@ -242,109 +188,6 @@ return {
       })
     end,
   },
-  --{
-  --  "mfussenegger/nvim-dap",
-  --  dependencies = {
-  --
-  --    { "mfussenegger/nvim-dap-python",
-  --      -- stylua: ignore
-  --      keys = {
-  --        { "<leader>dPt", function() require('dap-python').test_method() end, desc = "Debug Method", ft = "python" },
-  --        { "<leader>dPc", function() require('dap-python').test_class() end, desc = "Debug Class", ft = "python" },
-  --      },
-  --      config = function()
-  --        local path = require("mason-registry").get_package("debugpy"):get_install_path()
-  --        require("dap-python").setup(path .. "/venv/bin/python")
-  --      end,
-  --    },
-  --    -- fancy UI for the debugger
-  --    {
-  --      "rcarriga/nvim-dap-ui",
-  --              -- stylua: ignore
-  --              keys = {
-  --                  { "<leader>du", function()
-  --                      require("dapui").toggle({ })
-  --                  end, desc = "Dap UI" },
-  --                  { "<leader>de", function()
-  --                      require("dapui").eval()
-  --                  end, desc = "Eval", mode = { "n", "v" } },
-  --              },
-  --      opts = {},
-  --      config = function(_, opts)
-  --        -- setup dap config by VsCode launch.json file
-  --        -- require("dap.ext.vscode").load_launchjs()
-  --        local dap = require("dap")
-  --        local dapui = require("dapui")
-  --        dapui.setup(opts)
-  --        dap.listeners.after.event_initialized["dapui_config"] = function()
-  --          dapui.open({})
-  --        end
-  --        dap.listeners.before.event_terminated["dapui_config"] = function()
-  --          dapui.close({})
-  --        end
-  --        dap.listeners.before.event_exited["dapui_config"] = function()
-  --          dapui.close({})
-  --        end
-  --      end,
-  --    },
-  --
-  --    -- virtual text for the debugger
-  --    {
-  --      "theHamsta/nvim-dap-virtual-text",
-  --      opts = {},
-  --    },
-  --
-  --    -- which key integration
-  --    {
-  --      "folke/which-key.nvim",
-  --      optional = true,
-  --      opts = {
-  --        defaults = {
-  --          ["<leader>d"] = { name = "+debug" },
-  --        },
-  --      },
-  --    },
-  --
-  --    -- mason.nvim integration
-  --    {
-  --      "jay-babu/mason-nvim-dap.nvim",
-  --      dependencies = "mason.nvim",
-  --      cmd = { "DapInstall", "DapUninstall" },
-  --      opts = {
-  --        -- Makes a best effort to setup the various debuggers with
-  --        -- reasonable debug configurations
-  --        automatic_installation = true,
-  --
-  --        -- You can provide additional configuration to the handlers,
-  --        -- see mason-nvim-dap README for more information
-  --        handlers = {},
-  --
-  --        -- You'll need to check that you have the required things installed
-  --        -- online, please don't ask me how to install them :)
-  --        ensure_installed = {
-  --          -- Update this to ensure that you have the debuggers for the langs you want
-  --        },
-  --      },
-  --    },
-  --    -- golang debugger
-  --    {
-  --      "leoluz/nvim-dap-go",
-  --      config = true,
-  --    },
-  --  },
-  --  config = function()
-  --    local Config = require("lazyvim.config")
-  --    vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
-  --
-  --    for name, sign in pairs(Config.icons.dap) do
-  --      sign = type(sign) == "table" and sign or { sign }
-  --      vim.fn.sign_define(
-  --        "Dap" .. name,
-  --        { text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
-  --      )
-  --    end
-  --  end,
-  --},
   {
 
     "williamboman/mason.nvim",
