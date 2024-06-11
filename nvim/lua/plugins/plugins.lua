@@ -70,7 +70,7 @@ return {
           header = vim.split(logo, "\n"),
           center = {
             {
-              action = LazyVim.telescope("files"),
+              action = LazyVim.pick("files"),
               desc = " Find File",
               icon = " ",
               key = "f",
