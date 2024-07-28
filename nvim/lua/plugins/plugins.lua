@@ -12,6 +12,21 @@ return {
     },
     opts = {
       defaults = {
+        file_ignore_patterns = {
+          "node_modules",
+          ".svelte-kit/*",
+        },
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--ignore-file",
+          ".gitignore",
+        },
         preview = {
           mime_hook = function(filepath, bufnr, opts)
             local is_image = function(filepath)
@@ -94,7 +109,7 @@ return {
               key = "g",
             },
             {
-              action = [[lua LazyVim.telescope.config_files()()]],
+              action = [[lua LazyVim.pick.config_files()()]],
               desc = " Config",
               icon = " ",
               key = "c",
@@ -532,7 +547,7 @@ return {
         },
       },
       window = {
-        position = "left",
+        position = "float",
         mappings = {
           ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
         },
