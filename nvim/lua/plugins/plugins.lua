@@ -547,13 +547,14 @@ return {
         },
       },
       window = {
-        position = "float",
+        position = "right",
         mappings = {
           ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
         },
       },
     },
   },
+  { "terrastruct/d2-vim" },
   {
     "laytan/tailwind-sorter.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim" },
