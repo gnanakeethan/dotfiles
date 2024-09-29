@@ -547,7 +547,7 @@ return {
         },
       },
       window = {
-        position = "right",
+        position = "float",
         mappings = {
           ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
         },

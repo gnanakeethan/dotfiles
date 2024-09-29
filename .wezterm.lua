@@ -2,10 +2,37 @@ local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
 
+config.keys = {
+	-- Clears only the scrollback and leaves the viewport intact.
+	-- You won't see a difference in what is on screen, you just won't
+	-- be able to scroll back until you've output more stuff on screen.
+	-- This is the default behavior.
+	{
+		key = "K",
+		mods = "CMD|SHIFT",
+		action = act.ClearScrollback("ScrollbackOnly"),
+	},
+	-- Clears the scrollback and viewport leaving the prompt line the new first line.
+	{
+		key = "K",
+		mods = "CMD|SHIFT",
+		action = act.ClearScrollback("ScrollbackAndViewport"),
+	},
+	-- Clears the scrollback and viewport, and then sends CTRL-L to ask the
+	-- shell to redraw its prompt
+	{
+		key = "K",
+		mods = "CMD|SHIFT",
+		action = act.Multiple({
+			act.ClearScrollback("ScrollbackAndViewport"),
+			act.SendKey({ key = "L", mods = "CMD" }),
+		}),
+	},
+}
 config.font = wezterm.font("VictorMono Nerd Font Propo")
-config.font_size = 13
+config.font_size = 15
 config.use_dead_keys = false
-config.line_height = 2
+config.line_height = 1.42
 config.window_padding = {
 	left = 0,
 	right = 0,
