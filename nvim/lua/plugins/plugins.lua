@@ -326,6 +326,7 @@ return {
     opts = {
       bigfile = { enabled = true },
       dashboard = {
+        width = 80,
         preset = {
           header = [[ 
  ▗▄▄▗▖   ▗▄▖▗▖ ▗▗▄▄▄     ▗▄▄▖ ▗▄▖▗▄▄▖ ▗▄▖▗▖  ▗▖   ▗▄▖▗▖  ▗▖
@@ -604,7 +605,7 @@ return {
         },
       },
       window = {
-        position = "float",
+        position = "left",
         mappings = {
           ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
         },
