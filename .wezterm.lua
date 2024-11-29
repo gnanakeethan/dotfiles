@@ -1,6 +1,34 @@
 local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
+
+config.keys = {
+	-- Clears only the scrollback and leaves the viewport intact.
+	-- You won't see a difference in what is on screen, you just won't
+	-- be able to scroll back until you've output more stuff on screen.
+	-- This is the default behavior.
+	{
+		key = "K",
+		mods = "CMD|SHIFT",
+		action = act.ClearScrollback("ScrollbackOnly"),
+	},
+	-- Clears the scrollback and viewport leaving the prompt line the new first line.
+	{
+		key = "K",
+		mods = "CMD|SHIFT",
+		action = act.ClearScrollback("ScrollbackAndViewport"),
+	},
+	-- Clears the scrollback and viewport, and then sends CTRL-L to ask the
+	-- shell to redraw its prompt
+	{
+		key = "K",
+		mods = "CMD|SHIFT",
+		action = act.Multiple({
+			act.ClearScrollback("ScrollbackAndViewport"),
+			act.SendKey({ key = "L", mods = "CTRL" }),
+		}),
+	},
+}
 config.font = wezterm.font("VictorMono Nerd Font Propo")
 config.font_size = 14
 config.use_dead_keys = false
@@ -12,10 +40,17 @@ config.window_padding = {
 	bottom = 0,
 }
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
--- config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 -- config.tab_max_width = 16
 config.text_blink_rate = 500
 config.cursor_blink_rate = 500
+config.keys = {
+	{ key = "p", mods = "CMD", action = wezterm.action.SendKey({ key = "p", mods = "CTRL" }) },
+	-- { key = "w", mods = "CMD", action = wezterm.action.SendKey({ key = "w", mods = "CTRL" }) },
+	{ key = "n", mods = "CMD", action = wezterm.action.SendKey({ key = "n", mods = "CTRL" }) },
+	{ key = "LeftArrow", mods = "OPT", action = act.SendKey({ key = "b", mods = "ALT" }) },
+	{ key = "RightArrow", mods = "OPT", action = act.SendKey({ key = "f", mods = "ALT" }) },
+}
 local io = require("io")
 local latitude = 6.99
 local longitude = 79.99
