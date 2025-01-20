@@ -68,13 +68,13 @@ return {
 
  ██████╗██╗      ██████╗ ██╗   ██╗██████╗     ██████╗  █████╗ ██████╗  █████╗ ██╗     ██╗      █████╗ ██╗  ██╗    ██╗███╗   ██╗ ██████╗
 ██╔════╝██║     ██╔═══██╗██║   ██║██╔══██╗    ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║     ██║     ██╔══██╗╚██╗██╔╝    ██║████╗  ██║██╔════╝
-██║     ██║     ██║   ██║██║   ██║██║  ██║    ██████╔╝███████║██████╔╝███████║██║     ██║     ███████║ ╚███╔╝     ██║██╔██╗ ██║██║     
-██║     ██║     ██║   ██║██║   ██║██║  ██║    ██╔═══╝ ██╔══██║██╔══██╗██╔══██║██║     ██║     ██╔══██║ ██╔██╗     ██║██║╚██╗██║██║     
+██║     ██║     ██║   ██║██║   ██║██║  ██║    ██████╔╝███████║██████╔╝███████║██║     ██║     ███████║ ╚███╔╝     ██║██╔██╗ ██║██║
+██║     ██║     ██║   ██║██║   ██║██║  ██║    ██╔═══╝ ██╔══██║██╔══██╗██╔══██║██║     ██║     ██╔══██║ ██╔██╗     ██║██║╚██╗██║██║
 ╚██████╗███████╗╚██████╔╝╚██████╔╝██████╔╝    ██║     ██║  ██║██║  ██║██║  ██║███████╗███████╗██║  ██║██╔╝ ██╗    ██║██║ ╚████║╚██████╗
  ╚═════╝╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝     ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝╚═╝  ╚═══╝ ╚═════╝
 
  1111B S Governors Ave STE 21786, Dover, DE 19904
-                                                                                                                                       
+
 
       ]]
       local opts = {
@@ -168,15 +168,6 @@ return {
     end,
   },
   {
-    "glacambre/firenvim",
-    -- Lazy load firenvim
-    -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
-    lazy = not vim.g.started_by_firenvim,
-    build = function()
-      vim.fn["firenvim#install"](0)
-    end,
-  },
-  {
     "leoluz/nvim-dap-go",
     dependencies = {
       "mfussenegger/nvim-dap",
@@ -217,9 +208,6 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      "mason.nvim",
-    },
     opts = {
       -- make sure mason installs the server
       servers = {
@@ -249,23 +237,6 @@ return {
                 enable = true,
               },
               validate = true,
-              customTags = {
-                "!Ref",
-                "!Sub",
-                "!If",
-                "!Equals",
-                "!Not",
-                "!And",
-                "!Or",
-                "!FindInMap",
-                "!Base64",
-                "!Cidr",
-                "!Select",
-                "!Split",
-                "!Join",
-                "!GetAZs",
-                "!GetAtt",
-              },
               schemaStore = {
                 -- Must disable built-in schemaStore support to use
                 -- schemas from SchemaStore.nvim plugin
@@ -281,11 +252,9 @@ return {
         yamlls = function()
           -- Neovim < 0.10 does not have dynamic registration for formatting
           if vim.fn.has("nvim-0.10") == 0 then
-            require("lazyvim.util").lsp.on_attach(function(client, _)
-              if client.name == "yamlls" then
-                client.server_capabilities.documentFormattingProvider = true
-              end
-            end)
+            LazyVim.lsp.on_attach(function(client, _)
+              client.server_capabilities.documentFormattingProvider = true
+            end, "yamlls")
           end
         end,
       },
@@ -317,7 +286,6 @@ return {
       end)
     end,
   },
-
   {
     "folke/snacks.nvim",
     priority = 1000,
@@ -371,66 +339,6 @@ return {
         },
       },
     },
-  },
-  {
-    "nvim-cmp",
-    event = { "LazyFile", "VeryLazy" },
-    dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        dependencies = "copilot.lua",
-        opts = {},
-        config = function(_, opts)
-          local copilot_cmp = require("copilot_cmp")
-          copilot_cmp.setup(opts)
-          -- attach cmp source whenever copilot attaches
-          -- fixes lazy-loading issues with the copilot cmp source
-          require("lazyvim.util").lsp.on_attach(function(client)
-            if client.name == "copilot" then
-              copilot_cmp._on_insert_enter({})
-            end
-          end)
-        end,
-      },
-      --{
-      --  "gnanakeethan/cmp-ai",
-      --  dependencies = {
-      --    "nvim-lua/plenary.nvim",
-      --  },
-      --  config = function()
-      --    local cmp_ai = require("cmp_ai.config")
-      --    cmp_ai:setup({
-      --      max_lines = 100,
-      --      provider = "Ollama",
-      --      provider_options = {
-      --        model = "codegemma",
-      --      },
-      --      notify = true,
-      --      notify_callback = function(msg)
-      --        vim.notify(msg)
-      --      end,
-      --      run_on_every_keystroke = true,
-      --      ignored_file_types = {
-      --        -- default is not to ignore
-      --        -- uncomment to ignore in lua:
-      --        -- lua = true
-      --      },
-      --    })
-      --  end,
-      --},
-      "L3MON4D3/LuaSnip",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-cmdline",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-nvim-lsp-signature-help",
-      "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-path",
-      "onsails/lspkind-nvim",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    config = function()
-      require("plugins.custom.cmp")
-    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",

@@ -29,8 +29,11 @@ config.keys = {
 		}),
 	},
 }
-config.font = wezterm.font("VictorMono Nerd Font Propo")
-config.font_size = 14
+config.font = wezterm.font("VictorMono Nerd Font Propo", { weight = "Regular" })
+-- wezterm.font("VictorMono Nerd Font Propo", { weight = "Regular", stretch = "Normal", style = "Normal" }) -- (AKA: VictorMono NFP) /Users/gnanakeethan/Library/Fonts/VictorMonoNerdFontPropo-Regular.ttf, CoreText
+-- wezterm.font("VictorMono Nerd Font Propo", { weight = "Regular", stretch = "Normal", style = "Italic" }) -- (AKA: VictorMono NFP) /Users/gnanakeethan/Library/Fonts/VictorMonoNerdFontPropo-Italic.ttf, CoreText
+-- config.font = wezterm.font("VictorMono Nerd Font Propo", { weight = "Bold", stretch = "Normal", style = "Oblique" }) -- (AKA: VictorMono NFP, VictorMono NFP Obl) /Users/gnanakeethan/Library/Fonts/VictorMonoNerdFontPropo-Oblique.ttf, CoreText
+config.font_size = 15
 config.use_dead_keys = false
 config.line_height = 1.5
 config.window_padding = {
