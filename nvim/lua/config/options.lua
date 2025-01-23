@@ -25,8 +25,8 @@ opt.laststatus = 0
 opt.list = true -- Show some invisible characters (tabs...
 opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
-opt.pumblend = 10 -- Popup blend
-opt.pumheight = 10 -- Maximum number of entries in a popup
+opt.pumblend = 5 -- Popup blend
+opt.pumheight = 20 -- Maximum number of entries in a popup
 opt.relativenumber = true -- Relative line numbers
 opt.scrolloff = 4 -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
@@ -47,15 +47,10 @@ opt.timeoutlen = 300
 opt.undofile = true
 opt.undolevels = 10000
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
-opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
-
-if vim.fn.has("nvim-0.9.0") == 1 then
-  opt.splitkeep = "screen"
-  opt.shortmess:append({ C = true })
-end
-
+opt.splitkeep = "screen"
+opt.shortmess:append({ C = true })
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 vim.g.lazyvim_php_lsp = "intelephense"
@@ -72,26 +67,22 @@ opt.termguicolors = true
 opt.spell = false
 opt.ignorecase = true
 opt.smartcase = true
-opt.wrap = false
 opt.cmdheight = 1
 opt.breakindent = true -- maintain indent when wrapping indented lines
 opt.list = true -- enable the below listchars
 opt.listchars = { tab = "▸ ", trail = "·" }
 opt.fillchars:append({ eob = " " }) -- remove the ~ from end of buffer
-opt.mouse = "a" -- enable mouse for all modes
 opt.splitbelow = true
 opt.splitright = true
 opt.scrolloff = 999
 opt.sidescrolloff = 999
 opt.fileformat = "unix"
-opt.clipboard = "unnamedplus" -- Use Linux system clipboard
 opt.confirm = true -- ask for confirmation instead of erroring
 opt.undofile = true -- persistent undo
 opt.backup = true -- automatically save a backup file
 opt.backupdir:remove(".") -- keep backups out of the current directory
 opt.shortmess:append({ I = true }) -- disable the splash screen
 opt.wildmode = "longest:full,full" -- complete the longest common match, and allow tabbing the results to fully complete them
-opt.signcolumn = "yes:2"
 opt.showmode = false
 opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent polyglot from changing it
 opt.redrawtime = 10000 -- Allow more time for loading syntax on large files

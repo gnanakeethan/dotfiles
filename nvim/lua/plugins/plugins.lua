@@ -221,26 +221,30 @@ return {
               },
             },
           },
-          -- lazy-load schemastore when needed
-          on_new_config = function(new_config)
-            new_config.settings.yaml.schemas = vim.tbl_deep_extend(
-              "force",
-              new_config.settings.yaml.schemas or {},
-              require("schemastore").yaml.schemas()
-            )
-          end,
           settings = {
             redhat = { telemetry = { enabled = false } },
             yaml = {
               keyOrdering = false,
+              schemas = {
+                ["https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json"] = {
+                  "/*.cf.yaml",
+                  "/*.cf.yml",
+                  "/*.cloudformation.yaml",
+                  "/*.cloudformation.yml",
+                },
+              },
               format = {
                 enable = true,
+              },
+              customTags = {
+                "!If",
+                "!GetAtt",
               },
               validate = true,
               schemaStore = {
                 -- Must disable built-in schemaStore support to use
                 -- schemas from SchemaStore.nvim plugin
-                enable = false,
+                enable = true,
                 -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
                 url = "",
               },
@@ -513,7 +517,7 @@ return {
         },
       },
       window = {
-        position = "left",
+        position = "float",
         mappings = {
           ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
         },
