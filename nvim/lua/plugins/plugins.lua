@@ -1,58 +1,24 @@
 return {
   { "nelstrom/vim-visual-star-search" },
-  -- { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
+  { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
   {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
-    },
-    opts = {
-      defaults = {
-        file_ignore_patterns = {
-          "node_modules",
-          ".svelte-kit/*",
-        },
-        vimgrep_arguments = {
-          "rg",
-          "--color=never",
-          "--no-heading",
-          "--with-filename",
-          "--line-number",
-          "--column",
-          "--smart-case",
-          "--ignore-file",
-          ".gitignore",
-        },
-        preview = {
-          mime_hook = function(filepath, bufnr, opts)
-            local is_image = function(filepath)
-              local image_extensions = { "png", "jpg" } -- Supported image formats
-              local split_path = vim.split(filepath:lower(), ".", { plain = true })
-              local extension = split_path[#split_path]
-              return vim.tbl_contains(image_extensions, extension)
-            end
-            if is_image(filepath) then
-              local term = vim.api.nvim_open_term(bufnr, {})
-              local function send_output(_, data, _)
-                for _, d in ipairs(data) do
-                  vim.api.nvim_chan_send(term, d .. "\r\n")
-                end
-              end
-              vim.fn.jobstart({
-                "catimg",
-                filepath, -- Terminal image viewer command
-              }, { on_stdout = send_output, stdout_buffered = true, pty = true })
-            else
-              require("telescope.previewers.utils").set_preview_message(bufnr, opts.winid, "Binary cannot be previewed")
-            end
-          end,
-        },
+    "gnanakeethan/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = function()
+      require("lazy").load({ plugins = { "markdown-preview.nvim" } })
+      vim.fn["mkdp#util#install"]()
+    end,
+    keys = {
+      {
+        "<leader>cp",
+        ft = "markdown",
+        "<cmd>MarkdownPreviewToggle<cr>",
+        desc = "Markdown Preview",
       },
     },
+    config = function()
+      vim.cmd([[do FileType]])
+    end,
   },
   {
     "sbdchd/neoformat",
@@ -482,46 +448,6 @@ return {
         },
       },
       hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp" },
-    },
-  },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    },
-    opts = {
-      event_handlers = {
-
-        {
-          event = "file_opened",
-          handler = function(file_path)
-            -- auto close
-            -- vimc.cmd("Neotree close")
-            -- OR
-            require("neo-tree.command").execute({ action = "close" })
-          end,
-        },
-      },
-      close_if_last_window = true,
-      filesystem = {
-        filtered_items = {
-          hide_dotfiles = false,
-          hide_gitignored = true,
-        },
-        follow_current_file = {
-          enabled = true,
-          leave_dirs_open = false,
-        },
-      },
-      window = {
-        position = "float",
-        mappings = {
-          ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
-        },
-      },
     },
   },
   { "terrastruct/d2-vim" },
