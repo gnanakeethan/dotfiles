@@ -4,6 +4,15 @@
 -- This file is automatically loaded by plugins.core
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
+vim.diagnostic.config({
+  -- Use the default configuration
+  virtual_lines = true,
+  -- Alternatively, customize specific options
+  -- virtual_lines = {
+  --   -- Only show virtual line diagnostics for the current cursor line
+  --   current_line = true,
+  -- },
+})
 
 local opt = vim.opt
 
@@ -86,4 +95,4 @@ opt.wildmode = "longest:full,full" -- complete the longest common match, and all
 opt.showmode = false
 opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent polyglot from changing it
 opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
-opt.colorcolumn = { 80, 120 }
+opt.colorcolumn = { 80, 120, 160 }

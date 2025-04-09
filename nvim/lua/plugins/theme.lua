@@ -12,7 +12,7 @@ return {
       if now > tonumber(sunrise) and now < tonumber(sunset) then
         vim.api.nvim_command("colorscheme dayfox")
       else
-        vim.api.nvim_command("colorscheme nightfox")
+        vim.api.nvim_command("colorscheme carbonfox")
       end
     end,
   },
