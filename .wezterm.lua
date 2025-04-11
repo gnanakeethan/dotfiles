@@ -12,14 +12,9 @@ config.window_padding = {
 	bottom = 0,
 }
 
--- The filled in variant of the < symbol
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
-
--- The filled in variant of the > symbol
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 config.window_decorations = "RESIZE"
 config.tab_bar_at_bottom = false
--- config.tab_max_width = 16
+config.tab_max_width = 16
 config.text_blink_rate = 500
 config.cursor_blink_rate = 350
 config.default_cursor_style = "BlinkingBlock"
@@ -30,25 +25,12 @@ config.keys = {
 	{ key = "LeftArrow", mods = "OPT", action = act.SendKey({ key = "b", mods = "ALT" }) },
 	{ key = "RightArrow", mods = "OPT", action = act.SendKey({ key = "f", mods = "ALT" }) },
 }
-local io = require("io")
-local latitude = 6.99
-local longitude = 79.99
-local success, sunrise, stderr =
-	wezterm.run_child_process({ wezterm.home_dir .. "/go/bin/timer", latitude, longitude, "sunrise" })
-local success, sunset, stderr =
-	wezterm.run_child_process({ wezterm.home_dir .. "/go/bin/timer", latitude, longitude, "sunset" })
-local now = os.time()
-if now > tonumber(sunrise) and now < tonumber(sunset) then
-	config.color_scheme = "dayfox"
-else
-	config.color_scheme = "carbonfox"
-end
 
 function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "carbonfox"
+		return "neobones_dark"
 	else
-		return "dayfox"
+		return "neobones_light"
 	end
 end
 
