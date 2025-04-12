@@ -95,4 +95,4 @@ opt.wildmode = "longest:full,full" -- complete the longest common match, and all
 opt.showmode = false
 opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent polyglot from changing it
 opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
-opt.colorcolumn = { 80, 120, 160 }
+opt.colorcolumn = { 120, 160 }
