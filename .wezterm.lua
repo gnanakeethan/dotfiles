@@ -28,9 +28,9 @@ config.keys = {
 
 function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "neobones_dark"
+		return "tokyonight_storm"
 	else
-		return "neobones_light"
+		return "tokyonight_day"
 	end
 end
 

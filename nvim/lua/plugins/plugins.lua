@@ -1,5 +1,4 @@
 return {
-  { "nelstrom/vim-visual-star-search" },
   { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
   {
     "gnanakeethan/markdown-preview.nvim",
@@ -32,115 +31,6 @@ return {
         require("copilot.api").status = require("copilot.status")
       end,
     },
-  },
-  {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
-    dependencies = { { "nvim-tree/nvim-web-devicons" } },
-    opts = function()
-      local logo = [[
-
-
- ██████╗██╗      ██████╗ ██╗   ██╗██████╗     ██████╗  █████╗ ██████╗  █████╗ ██╗     ██╗      █████╗ ██╗  ██╗    ██╗███╗   ██╗ ██████╗
-██╔════╝██║     ██╔═══██╗██║   ██║██╔══██╗    ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║     ██║     ██╔══██╗╚██╗██╔╝    ██║████╗  ██║██╔════╝
-██║     ██║     ██║   ██║██║   ██║██║  ██║    ██████╔╝███████║██████╔╝███████║██║     ██║     ███████║ ╚███╔╝     ██║██╔██╗ ██║██║
-██║     ██║     ██║   ██║██║   ██║██║  ██║    ██╔═══╝ ██╔══██║██╔══██╗██╔══██║██║     ██║     ██╔══██║ ██╔██╗     ██║██║╚██╗██║██║
-╚██████╗███████╗╚██████╔╝╚██████╔╝██████╔╝    ██║     ██║  ██║██║  ██║██║  ██║███████╗███████╗██║  ██║██╔╝ ██╗    ██║██║ ╚████║╚██████╗
- ╚═════╝╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝     ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝╚═╝  ╚═══╝ ╚═════╝
-
- 1111B S Governors Ave STE 21786, Dover, DE 19904
-
-
-      ]]
-      local opts = {
-        theme = "doom",
-        hide = {
-          -- this is taken care of by lualine
-          -- enabling this messes up the actual laststatus setting after loading a file
-          statusline = false,
-        },
-        config = {
-          header = vim.split(logo, "\n"),
-          center = {
-            {
-              action = LazyVim.pick("files"),
-              desc = " Find File",
-              icon = " ",
-              key = "f",
-            },
-            {
-              action = "ene | startinsert",
-              desc = " New File",
-              icon = " ",
-              key = "n",
-            },
-            {
-              action = "Telescope oldfiles",
-              desc = " Recent Files",
-              icon = " ",
-              key = "r",
-            },
-            {
-              action = "Telescope live_grep",
-              desc = " Find Text",
-              icon = " ",
-              key = "g",
-            },
-            {
-              action = [[lua LazyVim.pick.config_files()()]],
-              desc = " Config",
-              icon = " ",
-              key = "c",
-            },
-            {
-              action = 'lua require("persistence").load()',
-              desc = " Restore Session",
-              icon = " ",
-              key = "s",
-            },
-            {
-              action = "LazyExtras",
-              desc = " Lazy Extras",
-              icon = " ",
-              key = "x",
-            },
-            {
-              action = "Lazy",
-              desc = " Lazy",
-              icon = "󰒲 ",
-              key = "l",
-            },
-            {
-              action = "qa",
-              desc = " Quit",
-              icon = " ",
-              key = "q",
-            },
-          },
-          footer = function()
-            local stats = require("lazy").stats()
-            local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-            return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
-          end,
-        },
-      }
-      for _, button in ipairs(opts.config.center) do
-        button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
-        button.key_format = "  %s"
-      end
-
-      -- close Lazy and re-open when the dashboard is ready
-      if vim.o.filetype == "lazy" then
-        vim.cmd.close()
-        vim.api.nvim_create_autocmd("User", {
-          pattern = "DashboardLoaded",
-          callback = function()
-            require("lazy").show()
-          end,
-        })
-      end
-      return opts
-    end,
   },
   {
     "leoluz/nvim-dap-go",
@@ -238,32 +128,6 @@ return {
         end,
       },
     },
-  },
-  {
-    "lukas-reineke/headlines.nvim",
-    enabled = false,
-    opts = function()
-      local opts = {}
-      for _, ft in ipairs({ "markdown", "norg", "rmd", "org" }) do
-        opts[ft] = {
-          headline_highlights = {},
-        }
-        for i = 1, 6 do
-          local hl = "Headline" .. i
-          vim.api.nvim_set_hl(0, hl, { link = "Headline", default = true })
-          table.insert(opts[ft].headline_highlights, hl)
-        end
-      end
-      return opts
-    end,
-    ft = { "markdown", "norg", "rmd", "org" },
-    config = function(_, opts)
-      -- PERF: schedule to prevent headlines slowing down opening a file
-      vim.schedule(function()
-        require("headlines").setup(opts)
-        require("headlines").refresh()
-      end)
-    end,
   },
   {
     "folke/snacks.nvim",
@@ -435,66 +299,9 @@ return {
     end,
   },
   {
-    "vhyrro/luarocks.nvim",
-    priority = 1001, -- this plugin needs to run before anything else
-    opts = {
-      rocks = { "magick" },
-    },
-  },
-  {
-    "3rd/image.nvim",
-    dependencies = { "luarocks.nvim" },
-    opts = {
-      backend = "kitty",
-      integrations = {
-        markdown = {
-          enabled = true,
-          filetypes = { "markdown", "vimwiki" },
-        },
-        neorg = {
-          enabled = true,
-          filetypes = { "norg" },
-        },
-      },
-      hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp" },
-    },
-  },
-  { "terrastruct/d2-vim" },
-  {
     "laytan/tailwind-sorter.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim" },
     build = "cd formatter && npm i && npm run build",
     config = true,
   },
-  -- {
-  --   "gnanakeethan/llm.nvim",
-  --   opts = {
-  --     tokens_to_clear = { "<EOT>" },
-  --     fim = {
-  --       enabled = true,
-  --       prefix = "<PRE> ",
-  --       middle = " <MID>",
-  --       suffix = " <SUF>",
-  --     },
-  --     lsp = {
-  --       bin_path = "/Users/gnanakeethan/.cargo/bin/llm-ls",
-  --     },
-  --     model = "http://localhost:11434/api/generate",
-  --     context_window = 4096,
-  --     tokenizer = {
-  --       repository = "codellama/CodeLlama-34b-hf",
-  --     },
-  --     request_params = {},
-  --     query_params = {
-  --       maxNewTokens = 120,
-  --       temperature = 0.3,
-  --       topP = 0.95,
-  --       stopTokens = nil,
-  --       doSample = true,
-  --     },
-  --     adaptor = "ollama",
-  --     api_token = "Test",
-  --     request_body = { model = "codellama:34b-code" },
-  --   },
-  -- },
 }
