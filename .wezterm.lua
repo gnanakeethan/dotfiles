@@ -14,6 +14,7 @@ config.window_padding = {
 
 config.window_decorations = "RESIZE"
 config.tab_bar_at_bottom = false
+config.scrollback_lines = 100000
 config.tab_max_width = 16
 config.text_blink_rate = 500
 config.cursor_blink_rate = 350
