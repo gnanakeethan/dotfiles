@@ -1,26 +1,21 @@
 font-family = "VictorMono Nerd Font Propo"
 font-size = 14
+adjust-cell-height = 50%
 
-window-padding-x = 0
-window-padding-y = 0
-window-decorations = true
-window-width = 220
-window-height = 50
 
+maximize = true
+alpha-blending = native
+
+working-directory = home
+shell-integration = zsh
+shell-integration-features = no-cursor
 cursor-style = block
-cursor-style-blink = true
-cursor-opacity = 1.0
-
-text-blink-rate = 500
-line-height = 1.25
-
-tabs-location = top
-tabs-max-width = 16
-
-keybind = cmd+p=send-keys:ctrl+p
-keybind = cmd+n=send-keys:ctrl+n
-keybind = alt+left=send-keys:alt+b
-keybind = alt+right=send-keys:alt+f
-
-status-right = battery:"🔋 {percentage}%"
-status-right = date:"%a %b %-d %H:%M:%S " 
+adjust-cursor-height = 50%
+window-theme = system
+window-decoration = auto
+window-padding-x = 1
+window-padding-y = 1
+window-padding-balance = true
+window-height=510
+window-width=1640
+theme = dark:tokyonight,light:tokyonight-day

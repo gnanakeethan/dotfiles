@@ -2,9 +2,9 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
 config.font = wezterm.font("VictorMono Nerd Font Propo", { weight = "Regular" })
-config.font_size = 14
+config.font_size = 15
 config.use_dead_keys = false
-config.line_height = 1.25
+config.line_height = 1.5
 config.window_padding = {
 	left = 0,
 	right = 0,
@@ -59,7 +59,7 @@ wezterm.on("update-right-status", function(window, pane)
 	}))
 end)
 config.initial_rows = 50
-config.initial_cols = 220
+config.initial_cols = 250
 config.force_reverse_video_cursor = true
 
 return config
