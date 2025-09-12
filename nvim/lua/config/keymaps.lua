@@ -33,7 +33,7 @@ vim.keymap.set("v", "Y", "myY`y")
 vim.keymap.set("n", "<leader>x", ":!open %<cr><cr>")
 --
 -- -- Disable annoying command line thing
--- vim.keymap.set("n", "q:", ":q<CR>")
+vim.keymap.set("n", "q:", ":q<CR>")
 --
 -- -- Resize with arrows
 -- vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
