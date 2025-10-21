@@ -1,42 +1,32 @@
 return {
   { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
   {
-    "gnanakeethan/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = function()
-      require("lazy").load({ plugins = { "markdown-preview.nvim" } })
-      vim.fn["mkdp#util#install"]()
-    end,
-    keys = {
-      {
-        "<leader>cp",
-        ft = "markdown",
-        "<cmd>MarkdownPreviewToggle<cr>",
-        desc = "Markdown Preview",
+    "nvim-neotest/neotest",
+    optional = true,
+    dependencies = {
+      "fredrikaverpil/neotest-golang",
+    },
+    opts = {
+      adapters = {
+        ["neotest-golang"] = {
+          -- Here we can set options for neotest-golang, e.g.
+          -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
+          dap_go_enabled = true, -- requires leoluz/nvim-dap-go
+        },
       },
     },
-    config = function()
-      vim.cmd([[do FileType]])
-    end,
   },
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
     opts = {
-      -- add any opts here
-      -- for example
-      provider = "openai",
+      provider = "bedrock",
       providers = {
-        openai = {
-          endpoint = "https://api.openai.com/v1",
-          model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
-          extra_request_body = {
-            timeout = 60000, -- Timeout in milliseconds, increase this for reasoning models
-            temperature = 0.75,
-            max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-            --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-          },
+        bedrock = {
+          model = "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          aws_profile = "ice-dev",
+          aws_region = "us-east-1",
         },
       },
     },
@@ -48,7 +38,7 @@ return {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
-      "echasnovski/mini.pick", -- for file_selector provider mini.pick
+      "nvim-mini/mini.pick", -- for file_selector provider mini.pick
       "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
       "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
       "ibhagwan/fzf-lua", -- for file_selector provider fzf
@@ -165,8 +155,24 @@ return {
                 enable = true,
               },
               customTags = {
+                "!fn",
+                "!And",
                 "!If",
+                "!Not",
+                "!Equals",
+                "!Or",
+                "!FindInMap sequence",
+                "!Base64",
+                "!Cidr",
+                "!Ref",
+                "!Ref Scalar",
+                "!Sub",
                 "!GetAtt",
+                "!GetAZs",
+                "!ImportValue",
+                "!Select",
+                "!Split",
+                "!Join sequence",
               },
               validate = true,
               schemaStore = {
@@ -174,7 +180,7 @@ return {
                 -- schemas from SchemaStore.nvim plugin
                 enable = true,
                 -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
-                url = "",
+                -- url = "",
               },
             },
           },
@@ -245,121 +251,6 @@ return {
         },
       },
     },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    version = false, -- last release is way too old and doesn't work on Windows
-    build = ":TSUpdate",
-    event = { "LazyFile", "VeryLazy" },
-    init = function(plugin)
-      -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
-      -- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
-      -- no longer trigger the **nvim-treeitter** module to be loaded in time.
-      -- Luckily, the only thins that those plugins need are the custom queries, which we make available
-      -- during startup.
-      require("lazy.core.loader").add_to_rtp(plugin)
-      require("nvim-treesitter.query_predicates")
-    end,
-    dependencies = {
-      {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        config = function()
-          -- When in diff mode, we want to use the default
-          -- vim text objects c & C instead of the treesitter ones.
-          local move = require("nvim-treesitter.textobjects.move") ---@type table<string,fun(...)>
-          local configs = require("nvim-treesitter.configs")
-          for name, fn in pairs(move) do
-            if name:find("goto") == 1 then
-              move[name] = function(q, ...)
-                if vim.wo.diff then
-                  local config = configs.get_module("textobjects.move")[name] ---@type table<string,string>
-                  for key, query in pairs(config or {}) do
-                    if q == query and key:find("[%]%[][cC]") then
-                      vim.cmd("normal! " .. key)
-                      return
-                    end
-                  end
-                end
-                return fn(q, ...)
-              end
-            end
-          end
-        end,
-      },
-    },
-    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-    keys = {
-      { "<c-space>", desc = "Increment selection" },
-      { "<bs>", desc = "Decrement selection", mode = "x" },
-    },
-    ---@type TSConfig
-    ---@diagnostic disable-next-line: missing-fields
-    opts = {
-      highlight = { enable = true },
-      indent = { enable = true },
-      auto_install = true,
-      sync_install = true,
-      ensure_installed = {
-        "bash",
-        "c",
-        "diff",
-        "html",
-        "javascript",
-        "dockerfile",
-        "jsdoc",
-        "json",
-        "jsonc",
-        "lua",
-        "luadoc",
-        "luap",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "query",
-        "regex",
-        "toml",
-        "tsx",
-        "go",
-        "typescript",
-        "svelte",
-        "vim",
-        "vimdoc",
-        "yaml",
-      },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
-      textobjects = {
-        move = {
-          enable = true,
-          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer" },
-          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer" },
-          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer" },
-          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer" },
-        },
-      },
-    },
-    ---@param opts TSConfig
-    config = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        ---@type table<string, boolean>
-        local added = {}
-        opts.ensure_installed = vim.tbl_filter(function(lang)
-          if added[lang] then
-            return false
-          end
-          added[lang] = true
-          return true
-        end, opts.ensure_installed)
-      end
-      require("nvim-treesitter.configs").setup(opts)
-    end,
   },
   {
     "laytan/tailwind-sorter.nvim",

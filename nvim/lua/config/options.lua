@@ -6,7 +6,7 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 vim.diagnostic.config({
   -- Use the default configuration
-  virtual_lines = true,
+  virtual_lines = false,
   -- Alternatively, customize specific options
   -- virtual_lines = {
   --   -- Only show virtual line diagnostics for the current cursor line
@@ -17,7 +17,7 @@ vim.diagnostic.config({
 local opt = vim.opt
 
 opt.autowrite = true -- Enable auto write
-opt.clipboard = "" -- Sync with system clipboard
+opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 3 -- Hide * markup for bold and italic
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
@@ -96,3 +96,4 @@ opt.showmode = false
 opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent polyglot from changing it
 opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
 opt.colorcolumn = { 120, 160 }
+vim.g.snacks_animate = false
