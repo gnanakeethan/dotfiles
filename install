@@ -6,3 +6,5 @@ rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
 rm -rf $HOME/.wezterm.lua
 ln $DOTFILES/.wezterm.lua $HOME/.wezterm.lua
+mkdir -pv ~/.config/jj/
+ln $DOTFILES/jj/config.toml $HOME/.config/jj/config.toml

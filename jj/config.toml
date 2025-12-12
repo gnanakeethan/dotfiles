@@ -1,0 +1,34 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Gnanakeethan Balasubramaniam"
+email = "gnanakeethan@cloudparallax.com"
+
+[aliases]
+l = ["log", "-r", "::"]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
+tug- = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+
+[ui]
+color = "always"
+paginate = "auto"
+default-command = "l"
+editor = "nvim"
+diff-editor = "meld-3"
+merge-editor = "meld"
+
+
+[signing]
+behavior = "force"
+backend = "gpg"
+key = "EF6F7ED0"
+
+[git]
+auto-local-bookmark = true
+track-default-bookmark-on-clone = true
+push-new-bookmarks = true
+
+[fix.tools.gofumpt]
+enabled = true
+command = ["gofumpt"]
+patterns = ["glob:'**/*.go'"]

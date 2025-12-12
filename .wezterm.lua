@@ -26,6 +26,17 @@ config.keys = {
 	{ key = "LeftArrow", mods = "OPT", action = act.SendKey({ key = "b", mods = "ALT" }) },
 	{ key = "RightArrow", mods = "OPT", action = act.SendKey({ key = "f", mods = "ALT" }) },
 }
+config.ssh_domains = {
+	{
+		-- This name identifies the domain
+		name = "x.cloudparallax.com",
+		-- The hostname or address to connect to. Will be used to match settings
+		-- from your ssh config file
+		remote_address = "x.cloudparallax.com",
+		-- The username to use on the remote host
+		username = "gnana",
+	},
+}
 
 function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
