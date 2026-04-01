@@ -8,3 +8,5 @@ rm -rf $HOME/.wezterm.lua
 ln $DOTFILES/.wezterm.lua $HOME/.wezterm.lua
 mkdir -pv ~/.config/jj/
 ln $DOTFILES/jj/config.toml $HOME/.config/jj/config.toml
+rm -rf $HOME/.claude/skills
+ln -s $DOTFILES/skills $HOME/.claude/skills

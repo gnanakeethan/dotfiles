@@ -8,14 +8,17 @@ email = "gnanakeethan@cloudparallax.com"
 l = ["log", "-r", "::"]
 tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
 tug- = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+p = ["git","push"]
+
+[revset-aliases]
+'why_immutable(r)' = 'r | roots(r:: & immutable_heads())'
+"immutable_heads()" = "builtin_immutable_heads() | (trunk().. & ~mine()) | remote_bookmarks()"
 
 [ui]
 color = "always"
 paginate = "auto"
 default-command = "l"
 editor = "nvim"
-diff-editor = "meld-3"
-merge-editor = "meld"
 
 
 [signing]
@@ -24,11 +27,12 @@ backend = "gpg"
 key = "EF6F7ED0"
 
 [git]
-auto-local-bookmark = true
 track-default-bookmark-on-clone = true
-push-new-bookmarks = true
 
 [fix.tools.gofumpt]
 enabled = true
 command = ["gofumpt"]
 patterns = ["glob:'**/*.go'"]
+
+[remotes.origin]
+auto-track-bookmarks = "glob:*"

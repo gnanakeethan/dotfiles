@@ -97,3 +97,4 @@ opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent 
 opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
 opt.colorcolumn = { 120, 160 }
 vim.g.snacks_animate = false
+vim.g.lazyvim_python_lsp = "ty"

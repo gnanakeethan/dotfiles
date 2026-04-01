@@ -1,6 +1,15 @@
 return {
   { "nvim-tree/nvim-web-devicons" }, -- OPTIONAL: for file icons,
   {
+    "nicolasgb/jj.nvim",
+    version = "*", -- Use latest stable release
+    -- Or from the main branch (uncomment the branch line and comment the version line)
+    -- branch = "main",
+    config = function()
+      require("jj").setup({})
+    end,
+  },
+  {
     "amitds1997/remote-nvim.nvim",
     version = "*", -- Pin to GitHub releases
     dependencies = {
@@ -32,13 +41,7 @@ return {
     version = false, -- Never set this value to "*"! Never!
     opts = {
       provider = "bedrock",
-      providers = {
-        bedrock = {
-          model = "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-          aws_profile = "ice-dev",
-          aws_region = "us-east-1",
-        },
-      },
+      providers = {},
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
@@ -139,6 +142,9 @@ return {
     opts = {
       -- make sure mason installs the server
       servers = {
+        ty = {},
+        basedpyright = { enabled = false },
+        pyright = { enabled = false },
         yamlls = {
           -- Have to add this for yamlls to understand that we support line folding
           capabilities = {
@@ -216,7 +222,7 @@ return {
     opts = {
       bigfile = { enabled = true },
       dashboard = {
-        width = 80,
+        width = 120,
         preset = {
           header = [[
  ▗▄▄▗▖   ▗▄▖▗▖ ▗▗▄▄▄     ▗▄▄▖ ▗▄▖▗▄▄▖ ▗▄▖▗▖  ▗▖   ▗▄▖▗▖  ▗▖
@@ -233,6 +239,18 @@ return {
           { section = "keys", gap = 1, padding = 1 },
           { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 5 },
           { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+          {
+            pane = 2,
+            icon = " ",
+            title = "Jujutsu Status",
+            section = "terminal",
+            enabled = vim.fn.isdirectory(".jj") == 1,
+            cmd = "jj status",
+            height = 5,
+            padding = 1,
+            ttl = 5 * 60,
+            indent = 3,
+          },
           {
             pane = 2,
             icon = " ",
