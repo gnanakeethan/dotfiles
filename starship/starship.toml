@@ -9,6 +9,8 @@ $directory\
 [](bg:yellow fg:peach)\
 $git_branch\
 $git_status\
+$jj_bookmark\
+$jj_change\
 [](fg:yellow bg:green)\
 $c\
 $rust\
@@ -84,6 +86,17 @@ format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
 [git_status]
 style = "bg:yellow"
 format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+
+[jj_bookmark]
+symbol = ""
+style = "bg:yellow"
+format = '[[ $symbol $bookmark(@$remote)$diverged ](fg:crust bg:yellow)]($style)'
+
+[jj_change]
+format = '[[ $change ](fg:crust bg:yellow)]($style)'
+prefix_style = "fg:crust bg:yellow bold"
+suffix_style = "fg:crust bg:yellow"
+change_offset_style = "fg:crust bg:yellow bold"
 
 [nodejs]
 symbol = ""
