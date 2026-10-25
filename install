@@ -10,3 +10,18 @@ mkdir -pv ~/.config/jj/
 ln $DOTFILES/jj/config.toml $HOME/.config/jj/config.toml
 rm -rf $HOME/.claude/skills
 ln -s $DOTFILES/skills $HOME/.claude/skills
+
+# zsh + oh-my-zsh
+for f in .zshrc .zshenv .spaceshiprc.zsh; do
+  ln -sf $DOTFILES/zsh/$f $HOME/$f
+done
+[ -d $HOME/.oh-my-zsh ] || RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+SPACESHIP=$HOME/.oh-my-zsh/custom/themes/spaceship-prompt
+[ -d $SPACESHIP ] || git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git $SPACESHIP
+ln -sf $SPACESHIP/spaceship.zsh-theme $HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+# secrets (tokens etc.) belong in untracked ~/.zsh_secrets
+[ -f $HOME/.zsh_secrets ] || install -m 600 /dev/null $HOME/.zsh_secrets
+
+# atuin (login/key stay local: ~/.local/share/atuin)
+mkdir -pv ~/.config/atuin
+ln -sf $DOTFILES/atuin/config.toml $HOME/.config/atuin/config.toml

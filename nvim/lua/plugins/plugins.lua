@@ -50,7 +50,21 @@ return {
       -- this file can contain specific instructions for your project
       instructions_file = "avante.md",
       -- for example
-      provider = "claude",
+      provider = "claude-code",
+      acp_providers = {
+        ["claude-code"] = {
+          command = "npx",
+          args = { "-y", "@agentclientprotocol/claude-agent-acp" },
+          env = {
+            NODE_NO_WARNINGS = "1",
+            -- unset to use Claude Code's own login (subscription) instead of an API key
+            ANTHROPIC_API_KEY = "",
+            PATH = os.getenv("PATH"),
+            -- profile = config dir; pick per nvim launch, e.g. CLAUDE_CONFIG_DIR=~/.claude-account1 nvim
+            CLAUDE_CONFIG_DIR = os.getenv("CLAUDE_CONFIG_DIR") or vim.fn.expand("~/.claude"),
+          },
+        },
+      },
       providers = {
         claude = {
           endpoint = "https://api.anthropic.com",

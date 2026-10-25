@@ -21,3 +21,6 @@ tags
 [._]*.un~
 
 .idea
+
+# secrets
+.zsh_secrets
