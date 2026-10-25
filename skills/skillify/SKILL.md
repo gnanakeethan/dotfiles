@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/skillify/SKILL.md

@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/ship/sections/capy-pr.md

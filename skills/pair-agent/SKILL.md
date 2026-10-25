@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/pair-agent/SKILL.md

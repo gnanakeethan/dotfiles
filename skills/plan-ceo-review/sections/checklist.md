@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/plan-ceo-review/sections/checklist.md

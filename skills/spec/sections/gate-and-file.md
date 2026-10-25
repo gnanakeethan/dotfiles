@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/spec/sections/gate-and-file.md

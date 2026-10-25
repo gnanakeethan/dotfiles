@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/setup-gbrain/sections/transcript-gate.md

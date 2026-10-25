@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/land-and-deploy/sections/first-run-validation.md

@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/design-html/sections/pretext-patterns.md

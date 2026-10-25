@@ -83,7 +83,8 @@ opt.listchars = { tab = "▸ ", trail = "·" }
 opt.fillchars:append({ eob = " " }) -- remove the ~ from end of buffer
 opt.splitbelow = true
 opt.splitright = true
-opt.scrolloff = 999
+opt.scrolloff = 99
+opt.scrolloffpad = 1
 opt.sidescrolloff = 999
 opt.fileformat = "unix"
 opt.confirm = true -- ask for confirmation instead of erroring
@@ -95,6 +96,6 @@ opt.wildmode = "longest:full,full" -- complete the longest common match, and all
 opt.showmode = false
 opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent polyglot from changing it
 opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
-opt.colorcolumn = { 120, 160 }
+opt.colorcolumn = "120,180"
 vim.g.snacks_animate = false
 vim.g.lazyvim_python_lsp = "ty"

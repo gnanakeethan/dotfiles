@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/open-gstack-browser/SKILL.md

@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/office-hours/sections/design-and-handoff.md

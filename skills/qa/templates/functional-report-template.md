@@ -1,0 +1,1 @@
+/Users/gnanakeethan/.gstack/render/claude/qa/templates/functional-report-template.md
