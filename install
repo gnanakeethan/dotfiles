@@ -25,3 +25,6 @@ ln -sf $SPACESHIP/spaceship.zsh-theme $HOME/.oh-my-zsh/custom/themes/spaceship.z
 # atuin (login/key stay local: ~/.local/share/atuin)
 mkdir -pv ~/.config/atuin
 ln -sf $DOTFILES/atuin/config.toml $HOME/.config/atuin/config.toml
+
+# starship
+ln -sf $DOTFILES/starship/starship.toml $HOME/.config/starship.toml
