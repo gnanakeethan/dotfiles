@@ -1,1 +1,1 @@
-/Users/gnanakeethan/dotfiles/skills/gstack/review/gate-integrity.md
+/Users/gnanakeethan/.claude/skills/gstack/review/gate-integrity.md

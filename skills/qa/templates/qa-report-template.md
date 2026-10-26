@@ -1,1 +1,1 @@
-/Users/gnanakeethan/dotfiles/skills/gstack/qa/templates/qa-report-template.md
+/Users/gnanakeethan/.claude/skills/gstack/qa/templates/qa-report-template.md

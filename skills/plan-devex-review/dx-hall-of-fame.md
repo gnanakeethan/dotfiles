@@ -1,1 +1,1 @@
-/Users/gnanakeethan/dotfiles/skills/gstack/plan-devex-review/dx-hall-of-fame.md
+/Users/gnanakeethan/.claude/skills/gstack/plan-devex-review/dx-hall-of-fame.md

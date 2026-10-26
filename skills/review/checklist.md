@@ -1,1 +1,1 @@
-/Users/gnanakeethan/dotfiles/skills/gstack/review/checklist.md
+/Users/gnanakeethan/.claude/skills/gstack/review/checklist.md

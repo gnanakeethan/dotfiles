@@ -1,1 +1,1 @@
-/Users/gnanakeethan/dotfiles/skills/gstack/cso/ACKNOWLEDGEMENTS.md
+/Users/gnanakeethan/.claude/skills/gstack/cso/ACKNOWLEDGEMENTS.md

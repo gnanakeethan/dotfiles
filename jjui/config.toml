@@ -1,0 +1,15 @@
+# delta-auto = git-delta (brew) wrapper, not Zed's /usr/local/bin/delta
+# https://github.com/idursun/jjui/discussions/163
+
+# narrow preview pane: unified (DELTA_UNIFIED)
+[preview]
+revision_command = ["util", "exec", "--", "bash", "-c", """jj show --color always --git -r $change_id | DELTA_UNIFIED=1 ~/.config/delta/delta-auto --paging never"""]
+oplog_command = ["util", "exec", "--", "bash", "-c", """jj op show $operation_id --color always --git | DELTA_UNIFIED=1 ~/.config/delta/delta-auto --paging never"""]
+file_command = ["util", "exec", "--", "bash", "-c", """jj diff --color always --git -r $change_id $file | DELTA_UNIFIED=1 ~/.config/delta/delta-auto --paging never"""]
+
+# full-screen side-by-side; delta owns the pager so it sees the tty width
+# (piping into less made it fall back to 80 cols)
+[custom_commands."deltadiff"]
+key = ["d"]
+args = ["util", "exec", "--", "bash", "-c", """jj show --summary --git --color always -r $change_id | ~/.config/delta/delta-auto --pager 'less -R'"""]
+show = "interactive"

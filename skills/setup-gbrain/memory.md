@@ -1,1 +1,1 @@
-/Users/gnanakeethan/dotfiles/skills/gstack/setup-gbrain/memory.md
+/Users/gnanakeethan/.claude/skills/gstack/setup-gbrain/memory.md

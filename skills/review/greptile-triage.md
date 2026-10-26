@@ -1,1 +1,1 @@
-/Users/gnanakeethan/dotfiles/skills/gstack/review/greptile-triage.md
+/Users/gnanakeethan/.claude/skills/gstack/review/greptile-triage.md

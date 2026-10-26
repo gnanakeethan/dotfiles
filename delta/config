@@ -1,0 +1,38 @@
+[delta]
+	features = sbs
+	# headers/line numbers use named colors = the terminal's own catppuccin palette.
+	# delta-auto adds the "latte" or "mocha" feature below from macOS appearance.
+	line-numbers = true
+	navigate = true
+	hyperlinks = true
+	file-style = bold blue
+	file-decoration-style = blue ul
+	hunk-header-style = file line-number syntax
+	hunk-header-decoration-style = blue box
+	hunk-header-file-style = bold blue
+	hunk-header-line-number-style = bold yellow
+	line-numbers-minus-style = bold red
+	line-numbers-plus-style = bold green
+	line-numbers-zero-style = bright-black
+	line-numbers-left-style = bright-black
+	line-numbers-right-style = bright-black
+
+# side-by-side by default; narrow viewers (jjui preview) pass --features= to drop it
+[delta "sbs"]
+	side-by-side = true
+
+[delta "latte"]
+	light = true
+	syntax-theme = Catppuccin Latte
+	minus-style = syntax "#f6d0d6"
+	minus-emph-style = syntax "#f0a0ae"
+	plus-style = syntax "#d3ebcb"
+	plus-emph-style = syntax "#a6d89a"
+
+[delta "mocha"]
+	dark = true
+	syntax-theme = Catppuccin Mocha
+	minus-style = syntax "#4d3042"
+	minus-emph-style = syntax "#7a3a52"
+	plus-style = syntax "#2f4a3a"
+	plus-emph-style = syntax "#3f7a50"

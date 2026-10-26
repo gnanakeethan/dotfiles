@@ -18,8 +18,15 @@ p = ["git","push"]
 color = "always"
 paginate = "auto"
 default-command = "l"
-editor = "nvim"
+editor = ["vim", "-u", "NONE", "-N"]
 
+
+[[--scope]]
+"--when.commands" = ["diff", "show", "log", "evolog", "op"]
+
+[--scope.ui]
+pager = "/Users/gnanakeethan/.config/delta/delta-auto"
+diff-formatter = ":git"
 
 [signing]
 behavior = "force"
@@ -28,6 +35,7 @@ key = "EF6F7ED0"
 
 [git]
 track-default-bookmark-on-clone = true
+colocate = false
 
 [fix.tools.gofumpt]
 enabled = true

@@ -28,3 +28,12 @@ ln -sf $DOTFILES/atuin/config.toml $HOME/.config/atuin/config.toml
 
 # starship
 ln -sf $DOTFILES/starship/starship.toml $HOME/.config/starship.toml
+
+# delta (read by jj pager via --config)
+mkdir -pv ~/.config/delta
+ln -sf $DOTFILES/delta/config $HOME/.config/delta/config
+ln -sf $DOTFILES/delta/delta-auto $HOME/.config/delta/delta-auto
+
+# jjui
+mkdir -pv ~/.config/jjui
+ln -sf $DOTFILES/jjui/config.toml $HOME/.config/jjui/config.toml

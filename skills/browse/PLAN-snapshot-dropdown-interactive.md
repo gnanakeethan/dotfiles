@@ -1,1 +1,1 @@
-/Users/gnanakeethan/dotfiles/skills/gstack/browse/PLAN-snapshot-dropdown-interactive.md
+/Users/gnanakeethan/.claude/skills/gstack/browse/PLAN-snapshot-dropdown-interactive.md

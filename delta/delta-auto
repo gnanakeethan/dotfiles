@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# git-delta (brew) with catppuccin latte/mocha picked from macOS day/night appearance.
+# DELTA_UNIFIED=1 drops side-by-side (narrow viewers).
+if [ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" = Dark ]; then f=mocha; else f=latte; fi
+[ -n "$DELTA_UNIFIED" ] || f="sbs $f"
+exec /opt/homebrew/bin/delta --config "$HOME/.config/delta/config" --features "$f" "$@"
