@@ -1,0 +1,384 @@
+tap "alexandreptj/cask"
+tap "ariga/tap"
+tap "avencera/taps"
+tap "aws/tap"
+tap "benjiwolff/neovim-nightly"
+tap "coollabsio/coolify-cli"
+tap "dotenvx/brew"
+tap "flother/taps"
+tap "hashicorp/tap"
+tap "hewigovens/tap"
+tap "homebrew/cask-fonts"
+tap "homebrew/services"
+tap "jstkdng/programs"
+tap "ngrok/ngrok"
+tap "roots/tap"
+tap "shivammathur/extensions", trusted: { formulae: ["igbinary@8.3", "imap-uw", "msgpack@8.3"] }
+tap "shivammathur/php", trusted: true
+tap "supabase/tap"
+tap "surrealdb/tap"
+# Next-gen compiler infrastructure
+brew "llvm"
+# ARP scanning and fingerprinting tool
+brew "arp-scan"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+# Shell extension to jump to frequently used directories
+brew "autojump"
+# AWS Cloud Development Kit - framework for defining AWS infra as code
+brew "aws-cdk"
+# C parser in Python
+brew "pycparser"
+# Cryptographic recipes and primitives for Python
+brew "cryptography"
+# CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM
+brew "aws-sam-cli"
+# Curl like simplicity to access AWS resources
+brew "awscurl"
+# NaCl networking and cryptography library
+brew "libsodium"
+# Microsoft Azure CLI 2.0
+brew "azure-cli"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
+brew "caddy"
+# Insanely fast image printing in your terminal
+brew "catimg"
+# Validate CloudFormation templates against the CloudFormation spec
+brew "cfn-lint"
+# Versatile and fast Unicode/ASCII/ANSI graphics renderer
+brew "chafa"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
+# Cross-platform make
+brew "cmake"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Apjanke's fork of the classic cowsay project
+brew "cowsay"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Lightweight, framework-agnostic database migration tool
+brew "dbmate"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# Tool for exploring each layer in a docker image
+brew "dive"
+# Lightweight DNS forwarder and DHCP server
+brew "dnsmasq"
+# Convert text between DOS, UNIX, and Mac formats
+brew "dos2unix"
+# Easiest way to build and release mobile apps
+brew "fastlane"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# LLVM's OpenMP runtime library
+brew "libomp"
+# Play, record, convert, and stream many audio and video codecs
+brew "ffmpeg-full"
+# Create thumbnails for your video files
+brew "ffmpegthumbnailer"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Infamous electronic fortune-cookie generator
+brew "fortune"
+# Server app of fast reverse proxy to expose a local server to the internet
+brew "frps"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Common error values for all GnuPG components
+brew "libgpg-error"
+# Cryptographic library based on the code from GnuPG
+brew "libgcrypt"
+# Passphrase entry dialog utilizing the Assuan protocol
+brew "pinentry"
+# Library access to GnuPG
+brew "gpgme"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
+# Postgres C API library
+brew "libpq", link: true
+# Libraries for security-enabled client and server applications
+brew "nss"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# Git extension for versioning large files
+brew "git-lfs"
+# Git Remote Helper to interact with AWS CodeCommit
+brew "git-remote-codecommit"
+# Linting for your git commit messages
+brew "gitlint"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Post-modern modal text editor
+brew "helix"
+# Easy plain text accounting with command-line, terminal and web UIs
+brew "hledger"
+# Add GitHub support to git on the command-line
+brew "hub"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Git-compatible distributed version control system
+brew "jj"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Library for reading RAW files from digital photo cameras
+brew "libraw"
+# Tool for linting and static analysis of Lua code
+brew "luacheck"
+# Web and API based SMTP testing
+brew "mailpit"
+# Utility for directing compilation
+brew "make"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
+# Deep clean and optimize your Mac
+brew "mole"
+# Open source relational database management system
+brew "mysql"
+# Open source relational database management system
+brew "mysql-client@8.0"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim", args: ["HEAD"]
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+brew "nginx"
+# Port scanning utility for large networks
+brew "nmap"
+# Development kit for the Java programming language
+brew "openjdk"
+# Shell command parallelization utility
+brew "parallel"
+# General-purpose scripting language
+brew "php"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Fast, disk space efficient package manager
+brew "pnpm"
+# Adds support for geographic objects to PostgreSQL
+brew "postgis"
+# Object-relational database system
+brew "postgresql@17"
+# Object-relational database system
+brew "postgresql@18", restart_service: :changed
+# Linter for prose
+brew "proselint"
+# Implementation of Telnet and SSH
+brew "putty"
+# Python version management
+brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
+# Software environment for statistical computing
+brew "r", link: false
+# File browser
+brew "ranger"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Utility that provides fast incremental file transfer
+brew "rsync"
+# Powerful, clean, object-oriented scripting language
+brew "ruby@3.3"
+# Extremely fast Python linter, written in Rust
+brew "ruff"
+# Computational geometry and spatial indexing on the sphere
+brew "s2geometry"
+# SMART hard drive monitoring
+brew "smartmontools"
+# Zsh prompt for Astronauts
+brew "spaceship"
+# Support CI generation of SBOMs via golang tooling
+brew "spdx-sbom-generator"
+# Soak up standard input and write to a file
+brew "sponge"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Tool to impose load on and stress test a computer system
+brew "stress"
+# Formatting technology for Swift source code
+brew "swift-format"
+# Change macOS audio source from the command-line
+brew "switchaudio-osx"
+# Command-line tool to interact with Gitea servers
+brew "tea"
+# User interface to the TELNET protocol
+brew "telnet"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Markup-based typesetting system
+brew "typst"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# High-performance data structure server that primarily serves key/value workloads
+brew "valkey", restart_service: :changed
+# Simple terminal image viewer written in Rust
+brew "viu"
+# Internet file retriever
+brew "wget"
+# Fake keyboard/mouse input and window management for X
+brew "xdotool"
+# JavaScript package manager
+brew "yarn"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew "zellij"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig"
+# UNIX shell (command interpreter)
+brew "zsh"
+# CLI tool for interacting with the Coolify API
+brew "coollabsio/coolify-cli/coolify-cli", link: false, trusted: true
+# Secure dotenv—from the creator of `dotenv`
+brew "dotenvx/brew/dotenvx", trusted: true
+# Imagick PHP extension
+brew "shivammathur/extensions/imagick@8.2", trusted: true
+# Imap PHP extension
+brew "shivammathur/extensions/imap@8.3", trusted: true
+# Mcrypt PHP extension
+brew "shivammathur/extensions/mcrypt@8.3", trusted: true
+# Redis PHP extension
+brew "shivammathur/extensions/phpredis@8.3", trusted: true
+# Xdebug PHP extension
+brew "shivammathur/extensions/xdebug@8.3", trusted: true
+# Xdebug PHP extension
+brew "shivammathur/extensions/xdebug@8.4", trusted: true
+# Xdebug PHP extension
+brew "shivammathur/extensions/xdebug@8.5", trusted: true
+# Yaml PHP extension
+brew "shivammathur/extensions/yaml@8.4", trusted: true
+# General-purpose scripting language
+brew "shivammathur/php/php@8.3", trusted: true
+# General-purpose scripting language
+brew "shivammathur/php/php@8.4", trusted: true
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+cask "font-victor-mono"
+cask "font-victor-mono-nerd-font"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Native GUI for Jujutsu version control
+cask "hewigovens/tap/jayjay", trusted: true
+cask "kemai"
+# Archive manager
+cask "macpacker"
+# Visual diff and merge tool
+cask "meld"
+# Tool to control external monitor brightness & volume
+cask "monitorcontrol"
+cask "ngrok"
+# Second-display utility for iPhone and iPad over USB and Wi-Fi
+cask "opendisplay"
+# JDK from Oracle
+cask "oracle-jdk"
+# AI image upscaler
+cask "upscayl"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm@nightly"
+cask "wkhtmltopdf"
+# Multiplayer code editor
+cask "zed"
+vscode "anysphere.cursorpyright"
+vscode "bradlc.vscode-tailwindcss"
+vscode "dbaeumer.vscode-eslint"
+vscode "editorconfig.editorconfig"
+vscode "github.vscode-github-actions"
+vscode "golang.go"
+vscode "k--kato.intellij-idea-keybindings"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-vscode.makefile-tools"
+vscode "svelte.svelte-vscode"
+go "github.com/air-verse/air"
+go "bitbucket.org/onroutedrivers/backend"
+go "github.com/beego/bee/v2"
+go "github.com/dkorunic/betteralign/cmd/betteralign"
+go "github.com/spf13/cobra-cli"
+go "oss.terrastruct.com/d2"
+go "github.com/go-delve/delve/cmd/dlv"
+go "bitbucket.org/onroutedrivers/backend/ecommerce"
+go "github.com/gofiber/cli/fiber"
+go "golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment"
+go "github.com/jessevdk/go-assets-builder"
+go "golang.org/dl/go1.24.4"
+go "golang.org/dl/go1.25.0"
+go "github.com/gnanakeethan/goast/cmd/goast"
+go "mvdan.cc/gofumpt"
+go "golang.org/x/tools/cmd/goimports"
+go "github.com/incu6us/goimports-reviser/v3"
+go "github.com/golangci/golangci-lint/v2/cmd/golangci-lint"
+go "github.com/segmentio/golines"
+go "github.com/pressly/goose/v3/cmd/goose"
+go "golang.org/x/tools/gopls"
+go "github.com/google/gops"
+go "github.com/devasherr/gpad"
+go "htmx-sample"
+go "github.com/josharian/impl"
+go "github.com/idursun/jjui/cmd/jjui"
+go "github.com/projectdiscovery/naabu/v2/cmd/naabu"
+go "github.com/beego/orm-benchmark"
+go "github.com/daveagill/go-sdf/cmd/png2sdf"
+go "github.com/gnanakeethan/posbin"
+go "github.com/valyala/quicktemplate/qtc"
+go "bitbucket.org/onroutedrivers/backend/reindex"
+go "github.com/sqlc-dev/sqlc/cmd/sqlc"
+go "honnef.co/go/tools/cmd/staticcheck"
+go "honnef.co/go/tools/cmd/structlayout"
+go "github.com/swaggo/swag/cmd/swag"
+go "github.com/4meepo/tagalign/cmd/tagalign"
+go "github.com/a-h/templ/cmd/templ"
+go "github.com/gnanakeethan/dotfiles/nvim/lua/user/themes"
+cargo "jj-cli", source: "https://github.com/jj-vcs/jj.git"
+cargo "jj-lsp", source: "https://github.com/nilskch/jj-lsp.git"
+cargo "lazyjj"
+cargo "starship-jj", source: "https://gitlab.com/lanastara_foss/starship-jj?branch=main"
+uv "basedpyright"
+uv "cargo-lambda"
+npm "@caveman-ai/cli"
+npm "@fsouza/prettierd"
+npm "@grnsft/if-models"
+npm "@grnsft/if"
+npm "@mermaid-js/mermaid-cli"
+npm "@openai/codex"
+npm "aws-cdk"
+npm "corepack"
+npm "dotenv"
+npm "elasticdump"
+npm "graphqurl"
+npm "gulp"
+npm "intelephense"
+npm "n"
+npm "nativescript"
+npm "npm-check-updates"
+npm "pnpm"
+npm "prettier-plugin-svelte"
+npm "prettier"
+npm "svast"
+npm "swagger-cli"
+npm "tailwindcss"
+npm "ts-node"
+npm "vscode-langservers-extracted"

@@ -225,3 +225,13 @@ alias claude-account2="CLAUDE_CONFIG_DIR=~/.claude-account2 command claude"
 
 alias nv1="CLAUDE_CONFIG_DIR=~/.claude-account1 nvim"
 alias nv2="CLAUDE_CONFIG_DIR=~/.claude-account2 nvim"
+
+# Homebrew: keep ~/dotfiles/brew/Brewfile in sync after package changes
+export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/brew/Brewfile"
+brew() {
+  command brew "$@" || return
+  case "$1" in
+    install|uninstall|remove|rm|reinstall|tap|untap|upgrade)
+      command brew bundle dump --file="$HOMEBREW_BUNDLE_FILE" --force >/dev/null 2>&1 ;;
+  esac
+}
