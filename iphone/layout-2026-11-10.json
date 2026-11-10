@@ -1,0 +1,714 @@
+[
+    [
+        {
+            "bundleIdentifier": "com.apple.mobilephone",
+            "bundleVersion": "36",
+            "displayIdentifier": "com.apple.mobilephone",
+            "displayName": "Phone",
+            "iconModDate": "2026-10-23T01:38:41"
+        },
+        {
+            "bundleIdentifier": "com.apple.MobileSMS",
+            "bundleVersion": "1491.200.101.2.5",
+            "displayIdentifier": "com.apple.MobileSMS",
+            "displayName": "Messages",
+            "iconModDate": "2026-10-27T00:21:13.898075"
+        },
+        {
+            "bundleIdentifier": "com.apple.camera",
+            "bundleVersion": "4177.41.6.0.1",
+            "displayIdentifier": "com.apple.camera",
+            "displayName": "Camera",
+            "iconModDate": "2026-10-27T00:21:21.328828"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobilesafari",
+            "bundleVersion": "8625.2.8.10.7",
+            "displayIdentifier": "com.apple.mobilesafari",
+            "displayName": "Safari",
+            "iconModDate": "2026-10-27T00:21:10.023922"
+        }
+    ],
+    [
+        {
+            "allowsExternalSuggestions": true,
+            "allowsSuggestions": true,
+            "displayIdentifier": "680B926B-4F3D-4977-808B-19C81C69463F",
+            "elements": [
+                {
+                    "bundleIdentifier": "com.apple.mobilecal.CalendarWidgetExtension",
+                    "containerBundleIdentifier": "com.apple.mobilecal",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "8F3C4CEE-FDB0-467C-9B89-B758EEC1889F",
+                    "widgetIdentifier": "com.apple.CalendarWidget.CalendarUpNextWidget"
+                },
+                {
+                    "bundleIdentifier": "com.google.Maps.HomeTrafficWidgetExtension",
+                    "containerBundleIdentifier": "com.google.Maps",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "761C9309-8E95-407B-B05C-710780058507",
+                    "widgetIdentifier": "TrafficWidget.drive"
+                },
+                {
+                    "bundleIdentifier": "com.tinyspeck.chatlyio.widget",
+                    "containerBundleIdentifier": "com.tinyspeck.chatlyio",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "2B2EDE7A-46AE-486C-B123-EA4F0AEA0EE0",
+                    "widgetIdentifier": "status-widget"
+                },
+                {
+                    "bundleIdentifier": "com.apple.mobileslideshow.PhotosReliveWidget",
+                    "containerBundleIdentifier": "com.apple.mobileslideshow",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "2A0D77BA-51E1-4A3C-BF6E-43888A6708CE",
+                    "widgetIdentifier": "com.apple.mobileslideshow.PhotosReliveWidget"
+                },
+                {
+                    "bundleIdentifier": "com.apple.Music.MusicWidgets",
+                    "containerBundleIdentifier": "com.apple.Music",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "3FE8BF83-84FD-4D52-B62F-25BB9A57D884",
+                    "widgetIdentifier": "Music.RecentlyPlayedWidget"
+                }
+            ],
+            "gridSize": "small",
+            "iconLists": [],
+            "iconType": "custom",
+            "userSelectedElementIdentifier": "3FE8BF83-84FD-4D52-B62F-25BB9A57D884"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobilecal",
+            "displayIdentifier": "D0265B33-7644-435F-912D-A8837EEB62D4",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.Preferences",
+            "displayIdentifier": "EEA866A0-358D-4C32-8817-BFDD090DAAD0",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobileslideshow",
+            "bundleVersion": "916.57.154",
+            "displayIdentifier": "com.apple.mobileslideshow",
+            "displayName": "Photos",
+            "iconModDate": "2026-10-27T00:21:12.044537"
+        },
+        {
+            "bundleIdentifier": "com.ubercab.UberEats",
+            "displayIdentifier": "9AC8C268-2BE2-4F1E-8C0B-223B5CF18F29",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.Music",
+            "displayIdentifier": "1AC72690-04C9-4943-9B21-B97C093190F5",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.tinyspeck.chatlyio",
+            "bundleVersion": "463628",
+            "displayIdentifier": "com.tinyspeck.chatlyio",
+            "displayName": "Slack",
+            "iconModDate": "2026-11-08T05:27:00.625816"
+        },
+        {
+            "allowsExternalSuggestions": true,
+            "allowsSuggestions": true,
+            "bundleIdentifier": "com.apple.mobilesafari.SafariWidgetExtension",
+            "containerBundleIdentifier": "com.apple.mobilesafari",
+            "displayIdentifier": "08D5D727-7B4B-405B-B7F5-8808B78F5ED0",
+            "elementType": "widget",
+            "gridSize": "small",
+            "iconLists": [],
+            "iconType": "custom",
+            "widgetIdentifier": "ReadingListWidget"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobilemail",
+            "bundleVersion": "3901.200.71.2.2",
+            "displayIdentifier": "com.apple.mobilemail",
+            "displayName": "Mail",
+            "iconModDate": "2026-10-27T00:21:11.941016"
+        },
+        {
+            "bundleIdentifier": "com.google.Maps",
+            "displayIdentifier": "EBB5020B-2AAE-46AC-940D-0E3BAF2E4D30",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "allowsExternalSuggestions": true,
+            "allowsSuggestions": true,
+            "bundleIdentifier": "com.apple.Music.MusicWidgets",
+            "containerBundleIdentifier": "com.apple.Music",
+            "displayIdentifier": "DF8964E8-B6BE-4DEA-B097-6A2645C3252A",
+            "elementType": "widget",
+            "gridSize": "small",
+            "iconLists": [],
+            "iconType": "custom",
+            "widgetIdentifier": "Music.TopChartsWidget"
+        },
+        {
+            "bundleIdentifier": "com.formula1.ott",
+            "bundleVersion": "1579",
+            "displayIdentifier": "com.formula1.ott",
+            "displayName": "F1 TV",
+            "iconModDate": "2026-11-03T01:29:45.632763"
+        },
+        {
+            "bundleIdentifier": "com.atlassian.jira.app",
+            "bundleVersion": "267.1.0.33202",
+            "displayIdentifier": "com.atlassian.jira.app",
+            "displayName": "Jira",
+            "iconModDate": "2026-11-03T01:30:43.244595"
+        },
+        {
+            "bundleIdentifier": "com.google.Gmail",
+            "displayIdentifier": "61923833-3EF8-4878-932F-2894079DC7FC",
+            "iconLists": [],
+            "iconType": "app"
+        }
+    ],
+    [
+        {
+            "allowsExternalSuggestions": true,
+            "allowsSuggestions": true,
+            "displayIdentifier": "642BF2AB-EA6A-4C27-AE1A-1CFA8DE15450",
+            "elements": [
+                {
+                    "bundleIdentifier": "com.apple.mobilecal.CalendarWidgetExtension",
+                    "containerBundleIdentifier": "com.apple.mobilecal",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "591A60BA-FB4F-4764-B2BA-2311FFA44FC9",
+                    "widgetIdentifier": "com.apple.CalendarWidget.CalendarUpNextWidget"
+                },
+                {
+                    "bundleIdentifier": "com.google.Gmail.WidgetKitExtension",
+                    "containerBundleIdentifier": "com.google.Gmail",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "0CDDE65F-70B9-430C-9E12-4F0618764096",
+                    "widgetIdentifier": "com.google.Gmail.QuickActionWidget"
+                },
+                {
+                    "elementType": "files",
+                    "uniqueIdentifier": "2BB9352E-2BEA-4E3F-8AED-E3766AF22516"
+                }
+            ],
+            "gridSize": "medium",
+            "iconLists": [],
+            "iconType": "custom",
+            "userSelectedElementIdentifier": "0CDDE65F-70B9-430C-9E12-4F0618764096"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobilecal",
+            "displayIdentifier": "C14D7939-DA4D-40B7-9DF8-810B81DE51C8",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.tinyspeck.chatlyio",
+            "displayIdentifier": "7E93131C-38E9-43D8-A5A9-60EB33D06D93",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.calculator",
+            "displayIdentifier": "0FA5DFC6-BA64-4A26-A510-AFB14A76E7A4",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.upwork.ios.apps.bolt",
+            "displayIdentifier": "0E6CC35E-3D43-47C2-8F26-D5BBF401B15C",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.google.Gmail",
+            "bundleVersion": "6.0.261019.1808708",
+            "displayIdentifier": "com.google.Gmail",
+            "displayName": "Gmail",
+            "iconModDate": "2026-10-31T00:15:42.333629"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobilenotes",
+            "displayIdentifier": "E9552A87-E61A-4510-8720-15D0DAC9CB25",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "us.zoom.videomeetings",
+            "displayIdentifier": "29F6D7DA-7DD0-41FC-8379-01EEA9DC1BB8",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.reminders",
+            "bundleVersion": "4080",
+            "displayIdentifier": "com.apple.reminders",
+            "displayName": "Reminders",
+            "iconModDate": "2026-10-27T00:21:25.576785"
+        },
+        {
+            "bundleIdentifier": "com.apple.MobileAddressBook",
+            "bundleVersion": "1.0",
+            "displayIdentifier": "com.apple.MobileAddressBook",
+            "displayName": "Contacts",
+            "iconModDate": "2026-10-27T00:21:19.200790"
+        },
+        {
+            "bundleIdentifier": "com.google.Authenticator",
+            "displayIdentifier": "E54782BC-6481-44F0-A7FC-9C1A7DCC88AF",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.ubercab.UberEats",
+            "displayIdentifier": "81B48919-79C5-4A50-8B24-105CCC867F19",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.audible.iphone",
+            "bundleVersion": "2031",
+            "displayIdentifier": "com.audible.iphone",
+            "displayName": "Audible",
+            "iconModDate": "2026-10-28T00:31:01.239517"
+        },
+        {
+            "bundleIdentifier": "com.google.Maps",
+            "displayIdentifier": "212EF513-3155-485D-8C3E-BE4109092297",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.shortcuts",
+            "displayIdentifier": "FDE83B7C-DE26-4793-BB5B-76B2401E1FB1",
+            "iconLists": [],
+            "iconType": "app"
+        }
+    ],
+    [
+        {
+            "bundleIdentifier": "com.apple.Preferences",
+            "displayIdentifier": "8EA816C7-AA19-4773-B1FD-F1A520DF47D5",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobiletimer",
+            "bundleVersion": "1.0",
+            "displayIdentifier": "com.apple.mobiletimer",
+            "displayName": "Clock",
+            "iconModDate": "2026-10-27T00:21:09.908276"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobilenotes",
+            "bundleVersion": "3001.42.1",
+            "displayIdentifier": "com.apple.mobilenotes",
+            "displayName": "Notes",
+            "iconModDate": "2026-10-27T00:21:23.138346"
+        },
+        {
+            "bundleIdentifier": "com.apple.weather",
+            "bundleVersion": "1474",
+            "displayIdentifier": "com.apple.weather",
+            "displayName": "Weather",
+            "iconModDate": "2026-10-27T00:21:10.162644"
+        },
+        {
+            "bundleIdentifier": "com.apple.freeform",
+            "bundleVersion": "656.40.9.0.2",
+            "displayIdentifier": "com.apple.freeform",
+            "displayName": "Freeform",
+            "iconModDate": "2026-10-27T00:21:18.745624"
+        },
+        {
+            "bundleIdentifier": "com.ubercab.UberEats",
+            "displayIdentifier": "D6066E8E-338F-42DF-9913-CC43602E68F7",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.upwork.ios.apps.bolt",
+            "displayIdentifier": "A698163B-6D0E-4B44-912A-83CBC89600D7",
+            "iconLists": [],
+            "iconType": "app"
+        }
+    ],
+    [
+        {
+            "bundleIdentifier": "com.apple.findmy",
+            "bundleVersion": "470.31.6.16.46",
+            "displayIdentifier": "com.apple.findmy",
+            "displayName": "Find My",
+            "iconModDate": "2026-10-27T00:21:12.057727"
+        },
+        {
+            "bundleIdentifier": "com.google.Authenticator",
+            "bundleVersion": "5.1.0.10801",
+            "displayIdentifier": "com.google.Authenticator",
+            "displayName": "Authenticator",
+            "iconModDate": "2026-10-24T09:18:23.172213"
+        },
+        {
+            "bundleIdentifier": "us.zoom.videomeetings",
+            "bundleVersion": "39345",
+            "displayIdentifier": "us.zoom.videomeetings",
+            "displayName": "Zoom",
+            "iconModDate": "2026-10-30T02:31:53.782330"
+        },
+        {
+            "bundleIdentifier": "com.apple.Translate",
+            "bundleVersion": "396.2",
+            "displayIdentifier": "com.apple.Translate",
+            "displayName": "Translate",
+            "iconModDate": "2026-10-27T00:21:16.568392"
+        },
+        {
+            "bundleIdentifier": "com.apple.calculator",
+            "bundleVersion": "225",
+            "displayIdentifier": "com.apple.calculator",
+            "displayName": "Calculator",
+            "iconModDate": "2026-10-27T00:21:11.611375"
+        },
+        {
+            "allowsExternalSuggestions": true,
+            "allowsSuggestions": true,
+            "bundleIdentifier": "com.apple.Music.MusicWidgets",
+            "containerBundleIdentifier": "com.apple.Music",
+            "displayIdentifier": "652A55E7-B898-43AB-93C7-A86DD7120F90",
+            "elementType": "widget",
+            "gridSize": "large",
+            "iconLists": [],
+            "iconType": "custom",
+            "widgetIdentifier": "Music.RecentlyPlayedWidget"
+        }
+    ],
+    [
+        {
+            "allowsExternalSuggestions": true,
+            "allowsSuggestions": true,
+            "bundleIdentifier": "com.apple.mobiletimer.WorldClockWidget",
+            "containerBundleIdentifier": "com.apple.mobiletimer",
+            "displayIdentifier": "01AB6B50-963A-4C12-9B8A-6886FCC71E78",
+            "elementType": "widget",
+            "gridSize": "small",
+            "iconLists": [],
+            "iconType": "custom",
+            "userSelectedElementIdentifier": "DB3B95B4-36DD-4CD9-8B85-2300AA49C5B2",
+            "widgetIdentifier": "com.apple.mobiletimer.City"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobilecal",
+            "bundleVersion": "1",
+            "displayIdentifier": "com.apple.mobilecal",
+            "displayName": "Calendar",
+            "iconModDate": "2026-10-27T00:21:24.486592"
+        },
+        {
+            "bundleIdentifier": "com.apple.Health",
+            "bundleVersion": "7027.1.56.2.9",
+            "displayIdentifier": "com.apple.Health",
+            "displayName": "Health",
+            "iconModDate": "2026-10-27T00:21:17.756095"
+        },
+        {
+            "bundleIdentifier": "com.tinyspeck.chatlyio",
+            "displayIdentifier": "C043F163-69CE-4A56-8A38-65504D762E34",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.Preferences",
+            "bundleVersion": "2027.1.9.100",
+            "displayIdentifier": "com.apple.Preferences",
+            "displayName": "Settings",
+            "iconModDate": "2026-10-23T01:38:41"
+        },
+        {
+            "bundleIdentifier": "com.ginlong.solis",
+            "bundleVersion": "141",
+            "displayIdentifier": "com.ginlong.solis",
+            "displayName": "SolisCloud",
+            "iconModDate": "2026-10-18T09:17:07.122686"
+        },
+        {
+            "allowsExternalSuggestions": true,
+            "allowsSuggestions": true,
+            "bundleIdentifier": "com.duolingo.DuolingoMobile.Widget",
+            "containerBundleIdentifier": "com.duolingo.DuolingoMobile",
+            "displayIdentifier": "D7300D32-2D38-44A4-84E0-206395A0E593",
+            "elementType": "widget",
+            "gridSize": "small",
+            "iconLists": [],
+            "iconType": "custom",
+            "widgetIdentifier": "com.duolingo.DuolingoMobile.StreakWidget"
+        },
+        {
+            "bundleIdentifier": "com.audible.iphone",
+            "displayIdentifier": "06436956-A126-444A-ABFF-FF82363BAF90",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.Music",
+            "bundleVersion": "4026.210.3",
+            "displayIdentifier": "com.apple.Music",
+            "displayName": "Music",
+            "iconModDate": "2026-10-27T00:21:28.790767"
+        },
+        {
+            "bundleIdentifier": "com.ubercab.UberEats",
+            "bundleVersion": "6.347.10000",
+            "displayIdentifier": "com.ubercab.UberEats",
+            "displayName": "Uber Eats",
+            "iconModDate": "2026-11-05T02:44:22.011336"
+        },
+        {
+            "bundleIdentifier": "com.ubercab.UberClient",
+            "bundleVersion": "3.746.10001",
+            "displayIdentifier": "com.ubercab.UberClient",
+            "displayName": "Uber",
+            "iconModDate": "2026-11-06T00:58:03.087656"
+        },
+        {
+            "bundleIdentifier": "com.google.Maps",
+            "bundleVersion": "26.44.4.0068774210",
+            "displayIdentifier": "com.google.Maps",
+            "displayName": "Google Maps",
+            "iconModDate": "2026-11-06T00:57:25.356597"
+        },
+        {
+            "bundleIdentifier": "com.apple.Maps",
+            "bundleVersion": "2972.31.6.17.36",
+            "displayIdentifier": "com.apple.Maps",
+            "displayName": "Maps",
+            "iconModDate": "2026-10-27T00:21:15.847500"
+        },
+        {
+            "bundleIdentifier": "net.whatsapp.WhatsApp",
+            "bundleVersion": "1104102848",
+            "displayIdentifier": "net.whatsapp.WhatsApp",
+            "displayName": "‎WhatsApp",
+            "iconModDate": "2026-11-06T00:59:15.050345"
+        },
+        {
+            "bundleIdentifier": "com.tencent.xin",
+            "bundleVersion": "8.0.80.34",
+            "displayIdentifier": "com.tencent.xin",
+            "displayName": "WeChat",
+            "iconModDate": "2026-11-03T01:31:31.662055"
+        },
+        {
+            "bundleIdentifier": "net.whatsapp.WhatsAppSMB",
+            "bundleVersion": "1107655839",
+            "displayIdentifier": "net.whatsapp.WhatsAppSMB",
+            "displayName": "‎WA Business",
+            "iconModDate": "2026-11-08T05:26:27.940881"
+        },
+        {
+            "bundleIdentifier": "com.vega.chargenetplus",
+            "bundleVersion": "31",
+            "displayIdentifier": "com.vega.chargenetplus",
+            "displayName": "chargeNET+",
+            "iconModDate": "2026-10-01T20:57:45.119942"
+        }
+    ],
+    [
+        {
+            "allowsExternalSuggestions": true,
+            "allowsSuggestions": true,
+            "displayIdentifier": "1E44F4C6-7E6F-4BD2-B06C-AE9E1B68183C",
+            "elements": [
+                {
+                    "elementType": "siriSuggestions",
+                    "uniqueIdentifier": "6DFECA00-1415-48FA-BD2F-A2EA9F9093D7"
+                },
+                {
+                    "bundleIdentifier": "com.apple.mobilecal.CalendarWidgetExtension",
+                    "containerBundleIdentifier": "com.apple.mobilecal",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "59AD6C7B-BAFC-4A25-B776-2E995C36B251",
+                    "widgetIdentifier": "com.apple.CalendarWidget.CalendarUpNextWidget"
+                },
+                {
+                    "bundleIdentifier": "com.apple.Maps.GeneralMapsWidget",
+                    "containerBundleIdentifier": "com.apple.Maps",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "291734A1-8829-448C-BB42-F90C0B76CCB0",
+                    "widgetIdentifier": "com.apple.Maps"
+                },
+                {
+                    "bundleIdentifier": "com.apple.reminders.WidgetExtension",
+                    "containerBundleIdentifier": "com.apple.reminders",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "5540D29A-BEB7-4724-8CBE-317C4175F905",
+                    "widgetIdentifier": "com.apple.reminders.widget"
+                },
+                {
+                    "bundleIdentifier": "com.apple.Music.MusicWidgets",
+                    "containerBundleIdentifier": "com.apple.Music",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "8A651128-2303-4A39-B27A-C97C82C97058",
+                    "widgetIdentifier": "Music.RecentlyPlayedWidget"
+                },
+                {
+                    "bundleIdentifier": "com.apple.mobiletimer.WorldClockWidget",
+                    "containerBundleIdentifier": "com.apple.mobiletimer",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "EF622159-09A3-43CD-A9FC-90659B1FED45",
+                    "widgetIdentifier": "com.apple.mobiletimer.WorldClock"
+                },
+                {
+                    "bundleIdentifier": "com.apple.mobilenotes.WidgetExtension",
+                    "containerBundleIdentifier": "com.apple.mobilenotes",
+                    "elementType": "widget",
+                    "uniqueIdentifier": "1456693F-AD7E-4E23-B772-CAEF738ABF38",
+                    "widgetIdentifier": "com.apple.mobilenotes.FolderWidget"
+                }
+            ],
+            "gridSize": "small",
+            "iconLists": [],
+            "iconType": "custom",
+            "userSelectedElementIdentifier": "1456693F-AD7E-4E23-B772-CAEF738ABF38"
+        },
+        {
+            "bundleIdentifier": "com.google.Authenticator",
+            "displayIdentifier": "FED75259-0BFB-4F0D-A608-1603A75E34F7",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.Fitness",
+            "bundleVersion": "1.0",
+            "displayIdentifier": "com.apple.Fitness",
+            "displayName": "Fitness",
+            "iconModDate": "2026-10-27T00:21:18.024208"
+        },
+        {
+            "bundleIdentifier": "com.apple.Bridge",
+            "bundleVersion": "1.0",
+            "displayIdentifier": "com.apple.Bridge",
+            "displayName": "Watch",
+            "iconModDate": "2026-10-27T00:21:24.229023"
+        },
+        {
+            "bundleIdentifier": "com.apple.findmy",
+            "displayIdentifier": "E8CFB903-A6B7-4814-8DF7-76E1CFFC81CB",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.shortcuts",
+            "bundleVersion": "5114.0.8.3",
+            "displayIdentifier": "com.apple.shortcuts",
+            "displayName": "Shortcuts",
+            "iconModDate": "2026-10-27T00:21:19.178922"
+        },
+        {
+            "bundleIdentifier": "net.omobio.dialogsc",
+            "bundleVersion": "180330",
+            "displayIdentifier": "net.omobio.dialogsc",
+            "displayName": "MyDialog",
+            "iconModDate": "2026-09-30T02:38:17.736602"
+        },
+        {
+            "displayIdentifier": "com.upwork.ios.apps.bolt",
+            "displayName": "Upwork"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobileslideshow",
+            "displayIdentifier": "8D652DB0-6706-4EA5-AAB1-D8E50EA3E92C",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.tv",
+            "bundleVersion": "1",
+            "displayIdentifier": "com.apple.tv",
+            "displayName": "TV",
+            "iconModDate": "2026-10-27T00:21:19.378853"
+        },
+        {
+            "bundleIdentifier": "com.apple.Passwords",
+            "bundleVersion": "8625.2.8.10.7",
+            "displayIdentifier": "com.apple.Passwords",
+            "displayName": "Passwords",
+            "iconModDate": "2026-10-27T00:21:20.266381"
+        },
+        {
+            "bundleIdentifier": "com.apple.journal",
+            "bundleVersion": "113",
+            "displayIdentifier": "com.apple.journal",
+            "displayName": "Journal",
+            "iconModDate": "2026-10-27T00:21:16.369045"
+        },
+        {
+            "bundleIdentifier": "com.apple.calculator",
+            "displayIdentifier": "1740FB75-DF41-4B88-9EDE-AC9EFADFFF3A",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.apple.mobilenotes",
+            "displayIdentifier": "4D877068-B190-491B-9FE4-0F9EB581047B",
+            "iconLists": [],
+            "iconType": "app"
+        },
+        {
+            "bundleIdentifier": "com.3cx.3cxphone14",
+            "bundleVersion": "20.0.24.168",
+            "displayIdentifier": "com.3cx.3cxphone14",
+            "displayName": "3CX",
+            "iconModDate": "2026-11-03T23:58:39.581214"
+        },
+        {
+            "bundleIdentifier": "com.netflix.Netflix",
+            "bundleVersion": "6222",
+            "displayIdentifier": "com.netflix.Netflix",
+            "displayName": "Netflix",
+            "iconModDate": "2026-11-06T00:55:13.761328"
+        },
+        {
+            "bundleIdentifier": "com.brex.mobile.ios",
+            "bundleVersion": "65304",
+            "displayIdentifier": "com.brex.mobile.ios",
+            "displayName": "Brex",
+            "iconModDate": "2026-11-06T00:56:12.908433"
+        },
+        {
+            "bundleIdentifier": "com.mobility.evcharging",
+            "bundleVersion": "16",
+            "displayIdentifier": "com.mobility.evcharging",
+            "displayName": "eMotion Charging",
+            "iconModDate": "2026-03-21T12:48:50.655707"
+        }
+    ],
+    [
+        {
+            "bundleIdentifier": "com.tuya.smart",
+            "bundleVersion": "20261028205456",
+            "displayIdentifier": "com.tuya.smart",
+            "displayName": "Tuya",
+            "iconModDate": "2026-11-03T01:23:32.469498"
+        },
+        {
+            "bundleIdentifier": "com.anthropic.claude",
+            "bundleVersion": "41957044802",
+            "displayIdentifier": "com.anthropic.claude",
+            "displayName": "Claude",
+            "iconModDate": "2026-11-08T05:26:37.382314"
+        },
+        {
+            "bundleIdentifier": "com.apple.TestFlight",
+            "bundleVersion": "697.1",
+            "displayIdentifier": "com.apple.TestFlight",
+            "displayName": "TestFlight",
+            "iconModDate": "2026-10-24T09:19:32.576376"
+        }
+    ]
+]
